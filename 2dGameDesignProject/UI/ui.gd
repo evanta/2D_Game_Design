@@ -1,3 +1,4 @@
+class_name UI
 extends CanvasLayer
 
 @onready var progress_bar: ProgressBar = %ProgressBar
