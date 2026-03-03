@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://dnphqkwoyrt06"]
+
+[ext_resource type="Script" uid="uid://cqcnjr5ur40sm" path="res://UI/ui.gd" id="1_6dd3c"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t3f73"]
+bg_color = Color(0.7176471, 0, 0.16078432, 1)
+
+[sub_resource type="Theme" id="Theme_xev75"]
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_t3f73")
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1432553550]
+script = ExtResource("1_6dd3c")
+
+[node name="Control" type="Control" parent="." unique_id=1746456328]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_xev75")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control" unique_id=368762994]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.171
+offset_right = -843.0
+offset_bottom = -45.808
+
+[node name="ProgressBar" type="ProgressBar" parent="Control/HBoxContainer" unique_id=693428286]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+value = 100.0
