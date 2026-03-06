@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dcg4u6o34bomp"]
+
+[ext_resource type="Texture2D" uid="uid://bebu40gtbkd18" path="res://Weapons/Gauntlets/Screenshot 2026-03-06 at 1.23 Background Removed.22 PM.png" id="1_d7sbr"]
+[ext_resource type="Script" uid="uid://cyj01hms1golt" path="res://Weapons/Gauntlets/Guantles.gd" id="1_gpb42"]
+[ext_resource type="Texture2D" uid="uid://li8ewbaixnpy" path="res://Weapons/Gauntlets/Screenshot 2026-03-06 at 1.24 Background Removed.00 PM.png" id="2_gpb42"]
+[ext_resource type="PackedScene" uid="uid://cc8we3mk6aotx" path="res://Weapons/Gauntlets/GauntletsHitbox.tscn" id="2_tbwpf"]
+
+[node name="Gauntlets" type="Node2D" unique_id=1868553893]
+script = ExtResource("1_gpb42")
+hitbox_scene = ExtResource("2_tbwpf")
+attackSpeed = 0.2
+
+[node name="LeftGloves" type="Sprite2D" parent="." unique_id=2096270892]
+unique_name_in_owner = true
+position = Vector2(8.797163, -4.8510656)
+rotation = 1.9270103
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("1_d7sbr")
+
+[node name="RightGloves" type="Sprite2D" parent="." unique_id=1691569225]
+unique_name_in_owner = true
+position = Vector2(9.797178, 4.1489296)
+rotation = 1.6548522
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("2_gpb42")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=92658156]

@@ -3,16 +3,18 @@ extends Area2D
 var damage : float = 0.0
 var speed : float = 500.0
 var direction : float = 1.0
+var lifetime : float = 1.0
 
-func setup(dmg : float, dir : float):
+func setup(dmg : float, dir : float, rng : float):
 	damage = dmg
 	direction = dir
+	lifetime = rng
 	if direction < 0:
 		scale.x = -1
 
 func _ready():
 	body_entered.connect(onBodyEntered)
-	await get_tree().create_timer(3.0).timeout
+	await get_tree().create_timer(lifetime).timeout
 	queue_free()
 
 func _process(delta):

@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://cc8we3mk6aotx"]
+
+[ext_resource type="Script" uid="uid://402cqjprv6yu" path="res://Weapons/Gauntlets/gauntlets_hitbox.gd" id="1_gmlnn"]
+[ext_resource type="Texture2D" uid="uid://igdsranj12s5" path="res://Weapons/Gauntlets/FootageCrate-4K_Anime_Melee_Impacts_6@2X.webp" id="1_op2gq"]
+[ext_resource type="Texture2D" uid="uid://bebu40gtbkd18" path="res://Weapons/Gauntlets/Screenshot 2026-03-06 at 1.23 Background Removed.22 PM.png" id="3_ag7x7"]
+[ext_resource type="Texture2D" uid="uid://li8ewbaixnpy" path="res://Weapons/Gauntlets/Screenshot 2026-03-06 at 1.24 Background Removed.00 PM.png" id="4_on611"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_op2gq"]
+height = 20.0
+
+[node name="GauntletsHitbox" type="Area2D" unique_id=2101078585]
+script = ExtResource("1_gmlnn")
+
+[node name="Capow" type="Sprite2D" parent="." unique_id=1896213199]
+z_index = 1
+position = Vector2(27.999998, -1.0000005)
+rotation = 0.1844876
+scale = Vector2(0.09000245, 0.1699997)
+texture = ExtResource("1_op2gq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1623611538]
+position = Vector2(6, -1)
+shape = SubResource("CapsuleShape2D_op2gq")
+
+[node name="LeftSprite" type="Sprite2D" parent="." unique_id=873689414]
+unique_name_in_owner = true
+position = Vector2(9, -2.9999998)
+rotation = 1.9270103
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("3_ag7x7")
+
+[node name="RightSprite" type="Sprite2D" parent="." unique_id=2126528226]
+unique_name_in_owner = true
+position = Vector2(8, 0.99999976)
+rotation = 1.0181162
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("4_on611")

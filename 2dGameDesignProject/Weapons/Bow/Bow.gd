@@ -22,7 +22,7 @@ func attack():
 
 func performAttack():
 	var arrow = projectile_scene.instantiate()
-	arrow.setup(damage, direction)
+	arrow.setup(damage, direction, attackRange)
 	get_parent().add_child(arrow)
 	## switch to this next line when using player
 	##get_parent().get_parent().add_child(arrow)

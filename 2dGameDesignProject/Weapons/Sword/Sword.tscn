@@ -7,6 +7,7 @@
 [node name="Sword" type="Node2D" unique_id=1275924537]
 script = ExtResource("1_huonb")
 hitbox_scene = ExtResource("2_2jg7d")
+attackSpeed = 0.5
 
 [node name="DELETEME" type="Camera2D" parent="." unique_id=1107251971]
 

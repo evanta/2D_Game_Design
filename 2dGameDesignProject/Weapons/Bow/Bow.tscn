@@ -8,7 +8,7 @@
 [node name="Bow" type="Node2D" unique_id=892872385]
 script = ExtResource("1_npqrm")
 projectile_scene = ExtResource("2_kvfhx")
-attackSpeed = 1.0
+attackSpeed = 0.8
 
 [node name="BowSprite" type="Sprite2D" parent="." unique_id=1036441538]
 unique_name_in_owner = true
