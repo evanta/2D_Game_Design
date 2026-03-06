@@ -1,21 +1,22 @@
 [gd_scene format=3 uid="uid://dk3d27ibns4ke"]
 
-[ext_resource type="Script" uid="uid://bbhj0c543130d" path="res://Weapons/sword_hitbox.gd" id="1_f44ln"]
-[ext_resource type="Texture2D" uid="uid://bdprkmfji1qtn" path="res://Weapons/File1.png" id="2_y4fvx"]
+[ext_resource type="Script" uid="uid://bbhj0c543130d" path="res://Weapons/Sword/sword_hitbox.gd" id="1_f44ln"]
+[ext_resource type="Texture2D" uid="uid://bdprkmfji1qtn" path="res://Weapons/Sword/File1.png" id="2_y4fvx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f44ln"]
-size = Vector2(30, 42)
+size = Vector2(79, 75)
 
 [node name="SwordHitbox" type="Area2D" unique_id=1030491958]
 script = ExtResource("1_f44ln")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1243078919]
 unique_name_in_owner = true
-position = Vector2(15, 0)
+position = Vector2(39.5, -4.5)
 shape = SubResource("RectangleShape2D_f44ln")
 
 [node name="SwipeImage" type="Sprite2D" parent="." unique_id=1712617893]
 unique_name_in_owner = true
-position = Vector2(14.75, 0.50000143)
-scale = Vector2(0.055454545, 0.10249999)
+z_index = 1
+position = Vector2(25.999996, 1.4999995)
+scale = Vector2(0.19272728, 0.21750003)
 texture = ExtResource("2_y4fvx")

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cxgrk6jobg0d1"]
+
+[ext_resource type="Script" uid="uid://du8hvreveojky" path="res://Weapons/Sword/sword.gd" id="1_huonb"]
+[ext_resource type="PackedScene" uid="uid://dk3d27ibns4ke" path="res://Weapons/Sword/sword_hitbox.tscn" id="2_2jg7d"]
+[ext_resource type="Texture2D" uid="uid://br73eg86ohkq1" path="res://Weapons/Sword/Sword_Pixel_art_-_Radin.png" id="3_n2x74"]
+
+[node name="Sword" type="Node2D" unique_id=1275924537]
+script = ExtResource("1_huonb")
+hitbox_scene = ExtResource("2_2jg7d")
+
+[node name="DELETEME" type="Camera2D" parent="." unique_id=1107251971]
+
+[node name="SwordPNG" type="Sprite2D" parent="." unique_id=390578224]
+unique_name_in_owner = true
+position = Vector2(9.536743e-07, 0.99999905)
+scale = Vector2(0.06553713, 0.08022616)
+texture = ExtResource("3_n2x74")

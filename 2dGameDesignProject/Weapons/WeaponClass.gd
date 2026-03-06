@@ -31,6 +31,6 @@ func performAttack ():
 	## individual weapons will controll have unique attack logic 
 
 ## this is just to test if it works 
-#func _input(event: InputEvent) -> void:
-	#if event.is_action_pressed("ui_accept"):
-		#attack()
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_accept"):
+		attack()

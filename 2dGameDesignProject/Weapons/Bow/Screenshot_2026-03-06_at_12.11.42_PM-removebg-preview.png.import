@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdprkmfji1qtn"
-path="res://.godot/imported/File1.png-0ffb120497f6efb9625ff4c6b8b0060f.ctex"
+uid="uid://d3qmaxlqk7600"
+path="res://.godot/imported/Screenshot_2026-03-06_at_12.11.42_PM-removebg-preview.png-2c9bf8ffec650bb33d2fa40831e11f28.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Weapons/File1.png"
-dest_files=["res://.godot/imported/File1.png-0ffb120497f6efb9625ff4c6b8b0060f.ctex"]
+source_file="res://Weapons/Bow/Screenshot_2026-03-06_at_12.11.42_PM-removebg-preview.png"
+dest_files=["res://.godot/imported/Screenshot_2026-03-06_at_12.11.42_PM-removebg-preview.png-2c9bf8ffec650bb33d2fa40831e11f28.ctex"]
 
 [params]
 

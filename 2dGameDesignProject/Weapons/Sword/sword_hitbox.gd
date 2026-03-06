@@ -11,8 +11,11 @@ func setup(dmg : float, base_range : float, current_range : float):
 		collision_shape_2d.shape.size.y += scale_factor
 
 func _ready():
+	var swordPNG = get_parent().get_node("SwordPNG")
+	swordPNG.visible = false
 	body_entered.connect(onBodyEntered)
 	await get_tree().create_timer(0.2).timeout
+	swordPNG.visible = true
 	queue_free()
 
 func onBodyEntered(body):

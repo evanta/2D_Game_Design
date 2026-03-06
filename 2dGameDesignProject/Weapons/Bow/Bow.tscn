@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://nm4d1jwwunyr"]
+
+[ext_resource type="Script" uid="uid://c6du5nxcejpap" path="res://Weapons/Bow/Bow.gd" id="1_npqrm"]
+[ext_resource type="Texture2D" uid="uid://bp6h320ryaorm" path="res://Weapons/Bow/Screenshot_2026-03-06_at_12.09.44_PM-removebg-preview.png" id="2_0c6kc"]
+[ext_resource type="PackedScene" uid="uid://c00foyf0ji4g0" path="res://Weapons/Bow/Arrow.tscn" id="2_kvfhx"]
+[ext_resource type="Texture2D" uid="uid://bh2q54tigvijn" path="res://Weapons/Bow/Screenshot_2026-03-06_at_12.09.21_PM-removebg-preview.png" id="3_kvfhx"]
+
+[node name="Bow" type="Node2D" unique_id=892872385]
+script = ExtResource("1_npqrm")
+projectile_scene = ExtResource("2_kvfhx")
+attackSpeed = 1.0
+
+[node name="BowSprite" type="Sprite2D" parent="." unique_id=1036441538]
+unique_name_in_owner = true
+position = Vector2(-9.536743e-07, 0)
+scale = Vector2(0.13343254, 0.07600502)
+texture = ExtResource("2_0c6kc")
+
+[node name="DrawnBowSprite" type="Sprite2D" parent="." unique_id=2024659460]
+unique_name_in_owner = true
+visible = false
+position = Vector2(-1, 1.9073486e-06)
+scale = Vector2(0.10796767, 0.114583336)
+texture = ExtResource("3_kvfhx")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1695079289]
