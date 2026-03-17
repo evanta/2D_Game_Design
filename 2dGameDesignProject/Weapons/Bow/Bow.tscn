@@ -23,4 +23,4 @@ position = Vector2(-1, 1.9073486e-06)
 scale = Vector2(0.10796767, 0.114583336)
 texture = ExtResource("3_kvfhx")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1695079289]
+[node name="FORTESTING" type="Camera2D" parent="." unique_id=1695079289]

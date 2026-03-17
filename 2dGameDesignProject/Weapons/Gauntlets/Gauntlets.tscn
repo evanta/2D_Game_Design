@@ -24,4 +24,4 @@ rotation = 1.6548522
 scale = Vector2(0.06, 0.06)
 texture = ExtResource("2_gpb42")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=92658156]
+[node name="FORTESTING" type="Camera2D" parent="." unique_id=92658156]

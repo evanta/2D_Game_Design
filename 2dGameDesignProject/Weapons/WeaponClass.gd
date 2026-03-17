@@ -10,6 +10,7 @@ extends Node2D
 @export_range(1.0, 100.0, 0.5) var attackRange : float = 1.0 ##for melee weapons, keep this shorter, for projectiles crank it 
 
 var canAttack : bool = true
+var character = null
 
 func attack():
 	if canAttack == false:
@@ -17,6 +18,8 @@ func attack():
 	performAttack()
 	setAttackStatus()
 
+func setup(char):
+	character = char
 
 func setAttackStatus (): 
 	## reate a timer, using the attackSpeed varaibale as the duration,
@@ -32,5 +35,5 @@ func performAttack ():
 
 ## this is just to test if it works 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_accept"):
+	if event.is_action_pressed("attack"):
 		attack()
