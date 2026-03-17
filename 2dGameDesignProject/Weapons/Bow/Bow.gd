@@ -23,7 +23,7 @@ func attack():
 func performAttack():
 	var arrow = projectile_scene.instantiate()
 	arrow.setup(damage, direction, attackRange)
-	get_parent().add_child(arrow)
-	## switch to this next line when using player
-	##get_parent().get_parent().add_child(arrow)
+	get_tree().current_scene.add_child(arrow)
 	arrow.global_position = global_position
+	arrow.z_index = 100
+	print("Arrow z: ", arrow.z_index, " visible: ", arrow.visible, " modulate: ", arrow.modulate)

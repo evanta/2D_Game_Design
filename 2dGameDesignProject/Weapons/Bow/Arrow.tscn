@@ -13,6 +13,7 @@ script = ExtResource("1_2w1vu")
 shape = SubResource("RectangleShape2D_4aqte")
 
 [node name="Arrow" type="Sprite2D" parent="." unique_id=1627528391]
+z_index = 1
 position = Vector2(-0.17770101, 0.32891774)
 rotation = 1.5707964
 scale = Vector2(0.07700223, 0.060638815)

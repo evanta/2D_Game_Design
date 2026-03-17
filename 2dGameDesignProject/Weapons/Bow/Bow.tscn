@@ -9,18 +9,17 @@
 script = ExtResource("1_npqrm")
 projectile_scene = ExtResource("2_kvfhx")
 attackSpeed = 0.8
+attackRange = 2.0
 
 [node name="BowSprite" type="Sprite2D" parent="." unique_id=1036441538]
 unique_name_in_owner = true
-position = Vector2(-9.536743e-07, 0)
-scale = Vector2(0.13343254, 0.07600502)
+position = Vector2(7.375, -3.875)
+scale = Vector2(0.13343254, 0.08574121)
 texture = ExtResource("2_0c6kc")
 
 [node name="DrawnBowSprite" type="Sprite2D" parent="." unique_id=2024659460]
 unique_name_in_owner = true
 visible = false
-position = Vector2(-1, 1.9073486e-06)
+position = Vector2(6.375, -3.874998)
 scale = Vector2(0.10796767, 0.114583336)
 texture = ExtResource("3_kvfhx")
-
-[node name="FORTESTING" type="Camera2D" parent="." unique_id=1695079289]

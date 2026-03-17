@@ -115,10 +115,12 @@ sprite_frames = SubResource("SpriteFrames_it3yl")
 animation = &"run"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=748484614]
+position = Vector2(-9, 15)
 shape = SubResource("RectangleShape2D_tyfn0")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=494282047]
 
 [node name="WeaponSlot" type="Node2D" parent="." unique_id=953979417]
 unique_name_in_owner = true
-position = Vector2(45, 45)
+visibility_layer = 65
+position = Vector2(52, 40)
