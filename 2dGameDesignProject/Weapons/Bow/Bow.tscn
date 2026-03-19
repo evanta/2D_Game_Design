@@ -14,8 +14,8 @@ attackRange = 2.0
 
 [node name="BowSprite" type="Sprite2D" parent="." unique_id=1036441538]
 unique_name_in_owner = true
-position = Vector2(7.375, -3.875)
-scale = Vector2(0.13343254, 0.08574121)
+position = Vector2(8, -5.9604645e-08)
+scale = Vector2(0.16046624, 0.11432162)
 texture = ExtResource("2_0c6kc")
 
 [node name="DrawnBowSprite" type="Sprite2D" parent="." unique_id=2024659460]

@@ -14,6 +14,6 @@ attackSpeed = 0.5
 
 [node name="SwordPNG" type="Sprite2D" parent="." unique_id=390578224]
 unique_name_in_owner = true
-position = Vector2(9.536743e-07, 0.99999905)
-scale = Vector2(0.06553713, 0.08022616)
+position = Vector2(-0.99999976, 0)
+scale = Vector2(0.092178896, 0.10746485)
 texture = ExtResource("3_n2x74")

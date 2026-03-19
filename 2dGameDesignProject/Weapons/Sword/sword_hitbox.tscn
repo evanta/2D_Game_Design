@@ -4,19 +4,19 @@
 [ext_resource type="Texture2D" uid="uid://bdprkmfji1qtn" path="res://Weapons/Sword/File1.png" id="2_y4fvx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f44ln"]
-size = Vector2(79, 75)
+size = Vector2(143, 182)
 
 [node name="SwordHitbox" type="Area2D" unique_id=1030491958]
 script = ExtResource("1_f44ln")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1243078919]
 unique_name_in_owner = true
-position = Vector2(39.5, -4.5)
+position = Vector2(81, -1)
 shape = SubResource("RectangleShape2D_f44ln")
 
 [node name="SwipeImage" type="Sprite2D" parent="." unique_id=1712617893]
 unique_name_in_owner = true
 z_index = 1
-position = Vector2(25.999996, 1.4999995)
-scale = Vector2(0.19272728, 0.21750003)
+position = Vector2(59.49999, -1.4999981)
+scale = Vector2(0.31454542, 0.4775)
 texture = ExtResource("2_y4fvx")
