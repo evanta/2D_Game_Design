@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dbq2vts66xtpi" path="res://Sprite/Character.tscn" id="3_02iei"]
 [ext_resource type="PackedScene" uid="uid://dwrk1nabq0y3g" path="res://Weapons/WeaponPickUp.tscn" id="4_wcfwv"]
 [ext_resource type="PackedScene" uid="uid://ka36vvotev3b" path="res://Enemies/skeleton_enemy.tscn" id="5_02iei"]
+[ext_resource type="PackedScene" uid="uid://dnphqkwoyrt06" path="res://UI/UI.tscn" id="6_dycxk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dycxk"]
 texture = ExtResource("2_wcfwv")
@@ -552,3 +553,5 @@ scale = Vector2(0.7, 0.7)
 
 [node name="Skeleton" parent="." unique_id=1046337729 instance=ExtResource("5_02iei")]
 position = Vector2(928, 424)
+
+[node name="UI" parent="." unique_id=1432553550 instance=ExtResource("6_dycxk")]
