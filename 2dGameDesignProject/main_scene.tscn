@@ -1,3 +1,19 @@
 [gd_scene format=3 uid="uid://6tda0bs5mhe"]
 
+[ext_resource type="PackedScene" uid="uid://dc1bkk6xj3tju" path="res://Levels/StartingLevel.tscn" id="1_0f027"]
+[ext_resource type="PackedScene" uid="uid://dbq2vts66xtpi" path="res://Sprite/Character.tscn" id="2_2c62f"]
+[ext_resource type="PackedScene" uid="uid://ka36vvotev3b" path="res://Enemies/skeleton_enemy.tscn" id="3_gyfs4"]
+
 [node name="MainScene" type="Node2D" unique_id=480632665]
+
+[node name="StartingLevel" parent="." unique_id=1396859658 instance=ExtResource("1_0f027")]
+
+[node name="CharacterBody2D" parent="." unique_id=2039678697 instance=ExtResource("2_2c62f")]
+position = Vector2(25.852367, 476.90457)
+
+[node name="Skeleton" parent="." unique_id=1046337729 instance=ExtResource("3_gyfs4")]
+position = Vector2(251.00018, 489)
+
+[node name="Skeleton" parent="Skeleton" unique_id=1175329313 instance=ExtResource("3_gyfs4")]
+position = Vector2(366.5073, -6.5111313)
+scale = Vector2(1.0385975, 0.9917646)
