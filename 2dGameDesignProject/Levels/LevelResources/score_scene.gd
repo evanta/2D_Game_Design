@@ -1,13 +1,12 @@
 extends CanvasLayer
 
-@onready var panel = $PanelContainer
-@onready var titleLabel = $PanelContainer/VBoxContainer/TitleLabel
-@onready var enemiesLabel = $PanelContainer/VBoxContainer/EnemiesLabel
-@onready var timeLabel = $PanelContainer/VBoxContainer/TimeLabel
-@onready var healthLabel = $PanelContainer/VBoxContainer/HealthLabel
-@onready var totalLabel = $PanelContainer/VBoxContainer/TotalLabel
-@onready var restartButton = $PanelContainer/VBoxContainer/HBoxContainer/RestartButton
-@onready var menuButton = $PanelContainer/VBoxContainer/HBoxContainer/MenuButton
+@onready var titleLabel: Label = $Control/PanelContainer/VBoxContainer/TitleLable
+@onready var enemiesLabel: Label = $Control/PanelContainer/VBoxContainer/EnemiesLabel
+@onready var timeLabel: Label = $Control/PanelContainer/VBoxContainer/TimeLabel
+@onready var healthLabel: Label = $Control/PanelContainer/VBoxContainer/HealthLabel
+@onready var totalLabel: Label = $Control/PanelContainer/VBoxContainer/TotalLabel
+@onready var restartButton: Button = $Control/PanelContainer/VBoxContainer/HBoxContainer/RestartButton
+
 
 @export var currentLevelScene: String = ""
 
@@ -18,19 +17,19 @@ func _ready():
 
 func displayScore(scoreData: Dictionary):
 	titleLabel.text = "LEVEL COMPLETE!"
-	enemiesLabel.text = "Enemies Killed: %d/%d  —  %.1f pts" % [
-		scoreData.enemiesKilled, scoreData.totalEnemies, scoreData.enemyScore
-	]
-	## if you are looking at this code and want to know how it works
-	##the %d stuff are place holders that get replaced by the the stuff in the brackets in chronological order 
-	timeLabel.text = "Time: %.1fs (par %.0fs)  —  %.1f pts" % [
-		scoreData.timeTaken, scoreData.parTime, scoreData.timeScore
-	]
-	healthLabel.text = "Health: %.0f/%.0f  —  %.1f pts" % [
-		scoreData.health, scoreData.maxHealth, scoreData.healthScore
-	]
-	totalLabel.text = "TOTAL SCORE: %.1f / 100" % scoreData.finalScore
+	enemiesLabel.text = "Enemies Killed: " + str(scoreData.enemiesKilled) + "/" + str(scoreData.totalEnemies)
+	timeLabel.text = "Time: " + str(snapped(scoreData.timeTaken, 0.1)) + "s"
+	healthLabel.text = "Health: " + str(scoreData.health) + "/" + str(scoreData.maxHealth)
+	totalLabel.text = "TOTAL SCORE: " + str(snapped(scoreData.finalScore, 0.1))
 	visible = true
+	
+	var labels = [titleLabel, enemiesLabel, timeLabel, healthLabel, totalLabel]
+	for label in labels:
+		label.visible_ratio = 0.0
+
+	var tween = create_tween()
+	for label in labels:
+		tween.tween_property(label, "visible_ratio", 1.0, 0.5)
 
 func _onRestartPressed():
 	get_tree().paused = false

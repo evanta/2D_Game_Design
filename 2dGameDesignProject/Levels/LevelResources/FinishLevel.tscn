@@ -3,14 +3,15 @@
 [ext_resource type="Script" uid="uid://cfbf1t6kgjigt" path="res://Levels/LevelResources/finish_level.gd" id="1_8qdck"]
 [ext_resource type="Texture2D" uid="uid://dmy1ngw3wx23c" path="res://Levels/LevelResources/FinishLevelPNG Background Removed.png" id="2_uf2a7"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_8qdck"]
-radius = 195.6
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uf2a7"]
+size = Vector2(224, 34)
 
 [node name="FinishLevel" type="Area2D" unique_id=492503270]
 script = ExtResource("1_8qdck")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1514845400]
-shape = SubResource("CircleShape2D_8qdck")
+position = Vector2(16, 80)
+shape = SubResource("RectangleShape2D_uf2a7")
 
 [node name="FinishLevelPngBackgroundRemoved" type="Sprite2D" parent="." unique_id=1004116428]
 texture = ExtResource("2_uf2a7")
