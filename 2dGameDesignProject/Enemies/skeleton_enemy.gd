@@ -14,7 +14,7 @@ const SPEED = 300.0
 var direction = 1
 
 # walking cycle variables
-var max_walk_distance = 50 
+@export var max_walk_distance = 50 
 var start = 0 
 var traveled_distance = 0
 
