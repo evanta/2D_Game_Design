@@ -120,7 +120,8 @@ position = Vector2(-9, 15)
 shape = SubResource("RectangleShape2D_tyfn0")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=494282047]
-zoom = Vector2(1.63, 1.63)
+position = Vector2(-2.7186065, -228.40169)
+zoom = Vector2(1.12, 1.12)
 
 [node name="WeaponSlot" type="Node2D" parent="." unique_id=953979417]
 unique_name_in_owner = true

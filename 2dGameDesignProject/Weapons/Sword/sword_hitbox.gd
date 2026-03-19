@@ -19,6 +19,8 @@ func _ready():
 	queue_free()
 
 func onBodyEntered(body):
+	if body is Player:
+		return 
 	if body.has_method("takeDamage"):
 		body.takeDamage(damage)
 	if body.has_method("applyKnockback"):

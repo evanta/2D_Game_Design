@@ -10,12 +10,15 @@ extends CharacterBody2D
 @export var gravity: float = 900.0
 @export var jumpForce: float = 100.0
 
-
+var lastSafePosition: Vector2 = Vector2.ZERO
+var safePositionTimer: float = 0.0
 var slotOffset = 45.0
 
 
 func _ready() -> void:
 	add_to_group("player")
+	lastSafePosition = global_position
+
 func _physics_process(delta):
 	# Gravity
 	if not is_on_floor():
@@ -27,9 +30,9 @@ func _physics_process(delta):
 
 	# Horizontal movement
 	var dir := 0
-	if Input.is_action_pressed("ui_right"):
+	if Input.is_action_pressed("moveRight"):
 		dir = 1
-	elif Input.is_action_pressed("ui_left"):
+	elif Input.is_action_pressed("moveLeft"):
 		dir = -1
 
 	velocity.x = dir * speed
@@ -47,6 +50,12 @@ func _physics_process(delta):
 		anim.flip_h = (dir < 0)
 		weaponSlot.scale.x = dir
 		weaponSlot.position.x = slotOffset * dir
+		
+	if is_on_floor():
+		safePositionTimer += delta
+		if safePositionTimer >= 2.0:
+			lastSafePosition = global_position
+			safePositionTimer = 0.0
 	move_and_slide()
 
 func equipWeapon(weaponScene: PackedScene):
@@ -71,3 +80,8 @@ func takeDamage(amount: float):
 		tween.finished.connect(die)
 func die():
 	get_tree().reload_current_scene()
+
+func fallRespawn():
+	takeDamage(25.0)
+	global_position = lastSafePosition
+	velocity = Vector2.ZERO

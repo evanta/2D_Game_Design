@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://bm7qwrgod0six"]
+
+[ext_resource type="Script" uid="uid://cvpt1v4og8263" path="res://Levels/LevelResources/score_scene.gd" id="1_x0ndm"]
+
+[sub_resource type="Theme" id="Theme_x0ndm"]
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/constants/outline_size = 2
+Label/font_sizes/font_size = 22
+
+[node name="ScoreScene" type="CanvasLayer" unique_id=2113728801]
+script = ExtResource("1_x0ndm")
+
+[node name="Control" type="Control" parent="." unique_id=187260779]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_x0ndm")
+
+[node name="PanelContainer" type="PanelContainer" parent="Control" unique_id=68691889]
+custom_minimum_size = Vector2(400, 300)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -11.5
+offset_right = 4.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleLable" type="Label" parent="Control/PanelContainer" unique_id=1355072515]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+
+[node name="HSeparator" type="HSeparator" parent="Control/PanelContainer" unique_id=2019217419]
+layout_mode = 2
+
+[node name="EnemiesLabel" type="Label" parent="Control/PanelContainer" unique_id=364856698]
+layout_mode = 2
+
+[node name="TimeLabel" type="Label" parent="Control/PanelContainer" unique_id=571414981]
+layout_mode = 2
+
+[node name="HealthLabel" type="Label" parent="Control/PanelContainer" unique_id=564357322]
+layout_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="Control/PanelContainer" unique_id=797555885]
+layout_mode = 2
+
+[node name="TotalLabel" type="Label" parent="Control/PanelContainer" unique_id=1668342465]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/PanelContainer" unique_id=554372752]
+layout_mode = 2
+
+[node name="RestartButton" type="Button" parent="Control/PanelContainer/HBoxContainer" unique_id=1208076825]
+layout_mode = 2

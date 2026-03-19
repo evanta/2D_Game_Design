@@ -22,6 +22,7 @@ var knockbackVelocity = Vector2.ZERO
 @onready var hitbox: Area2D = %Hitbox
 
 func _ready():
+	add_to_group("enemy")
 	hitbox.body_entered.connect(onBodyEntered)
 
 func onBodyEntered(body):
@@ -64,4 +65,5 @@ func flashRed():
 	modulate = Color.WHITE
 
 func die():
-	queue_free()  # or play a death animation first
+	queue_free()
+	ScoreManager.registerKill()
