@@ -1,12 +1,22 @@
 extends Area2D
 
-@export var weaponScene: PackedScene
+enum WeaponType { SWORD, BOW, GAUNTLETS }
+
+@export var weaponType: WeaponType = WeaponType.SWORD
+
+var weaponScenes = {
+	WeaponType.SWORD: preload("res://Weapons/Sword/Sword.tscn"),
+	WeaponType.BOW: preload("res://Weapons/Bow/Bow.tscn"),
+	WeaponType.GAUNTLETS: preload("res://Weapons/Gauntlets/Gauntlets.tscn"),
+}
+
+var weaponScene: PackedScene
 
 var playerInRange = false
 var prompt: Label
 
 func _ready():
-	# Create the label dynamically
+	weaponScene = weaponScenes[weaponType]
 	prompt = Label.new()
 	prompt.text = "E to pick up"
 	prompt.visible = false
