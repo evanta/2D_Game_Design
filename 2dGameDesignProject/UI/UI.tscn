@@ -8,7 +8,7 @@ bg_color = Color(0.7176471, 0, 0.16078432, 1)
 [sub_resource type="Theme" id="Theme_xev75"]
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_t3f73")
 
-[node name="CanvasLayer" type="CanvasLayer" unique_id=1432553550]
+[node name="UI" type="CanvasLayer" unique_id=1432553550]
 script = ExtResource("1_6dd3c")
 
 [node name="Control" type="Control" parent="." unique_id=1746456328]

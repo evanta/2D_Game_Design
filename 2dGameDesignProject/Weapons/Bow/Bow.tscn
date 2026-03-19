@@ -8,6 +8,7 @@
 [node name="Bow" type="Node2D" unique_id=892872385]
 script = ExtResource("1_npqrm")
 projectile_scene = ExtResource("2_kvfhx")
+damage = 33.5
 attackSpeed = 0.8
 attackRange = 2.0
 

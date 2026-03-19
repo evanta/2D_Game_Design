@@ -1,12 +1,14 @@
+class_name Player
 extends CharacterBody2D
 
 @onready var weaponSlot: Node2D = %WeaponSlot
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 
-@export var health: float = 100.0
+@export var currentHealth: float = 100.0
+@export var maxHealth: float = 100.0
 @export var speed: float = 200.0
 @export var gravity: float = 900.0
-@export var jumpForce: float = 200.0
+@export var jumpForce: float = 100.0
 
 
 var slotOffset = 45.0
@@ -57,3 +59,15 @@ func equipWeapon(weaponScene: PackedScene):
 	weaponSlot.add_child(weapon)
 	print("weapon added to slot, calling setup")
 	weapon.setup(self)
+
+
+func takeDamage(amount: float):
+	currentHealth -= amount
+	if currentHealth <= 0:
+		var tween = create_tween()
+		tween.set_parallel()
+		tween.tween_property(self, ^"self_modulate", Color.DARK_RED, 1.0 )
+		tween.tween_property(self, ^"modulate", 0.5, 1.0)
+		tween.finished.connect(die)
+func die():
+	get_tree().reload_current_scene()

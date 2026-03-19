@@ -144,20 +144,30 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6vt0i"]
-size = Vector2(22.592855, 40.38252)
+size = Vector2(10.377, 38.467)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fcdv1"]
+size = Vector2(46.43254, 94.049614)
 
 [node name="Skeleton" type="CharacterBody2D" unique_id=1046337729]
 scale = Vector2(1.6152468, 1.3822494)
 script = ExtResource("1_fcdv1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=118319019]
-position = Vector2(1.2420919, -11.153008)
-scale = Vector2(0.74609995, 0.85578674)
+position = Vector2(1.2382011, 0.7234583)
+scale = Vector2(1.8250564, 1.8913183)
 sprite_frames = SubResource("SpriteFrames_euxau")
 animation = &"Walking"
-frame = 1
-frame_progress = 0.42083234
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1761152229]
-position = Vector2(-0.945664, -3.4617486)
+position = Vector2(-0.6191001, 15.916079)
+scale = Vector2(2.3999991, 2.3999991)
 shape = SubResource("RectangleShape2D_6vt0i")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=2113888661]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1476053682]
+position = Vector2(0.30954897, 17.363003)
+scale = Vector2(0.99999964, 0.99999964)
+shape = SubResource("RectangleShape2D_fcdv1")

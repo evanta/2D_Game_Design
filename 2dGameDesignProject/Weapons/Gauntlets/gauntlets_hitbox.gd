@@ -28,5 +28,8 @@ func _ready():
 	queue_free()
 
 func onBodyEntered(body):
-	if body.has_method("take_damage"):
-		body.take_damage(damage)
+	if body.has_method("takeDamage"):
+		body.takeDamage(damage)
+	if body.has_method("applyKnockback"):
+		var knockDir = (body.global_position - global_position).normalized()
+		body.applyKnockback(knockDir, 350.0)

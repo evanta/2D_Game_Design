@@ -3,7 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://b2uaxiig5taa8" path="res://Assets/Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="1_orlkf"]
 [ext_resource type="PackedScene" uid="uid://dbq2vts66xtpi" path="res://Sprite/Character.tscn" id="2_16ny0"]
 [ext_resource type="PackedScene" uid="uid://dwrk1nabq0y3g" path="res://Weapons/WeaponPickUp.tscn" id="3_locjh"]
-[ext_resource type="PackedScene" uid="uid://nm4d1jwwunyr" path="res://Weapons/Bow/Bow.tscn" id="5_locjh"]
+[ext_resource type="PackedScene" uid="uid://dnphqkwoyrt06" path="res://UI/UI.tscn" id="5_16ny0"]
+[ext_resource type="PackedScene" uid="uid://ka36vvotev3b" path="res://Enemies/skeleton_enemy.tscn" id="5_locjh"]
+[ext_resource type="PackedScene" uid="uid://dcg4u6o34bomp" path="res://Weapons/Gauntlets/Gauntlets.tscn" id="6_0hlja"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r6v2h"]
 texture = ExtResource("1_orlkf")
@@ -514,4 +516,9 @@ position = Vector2(62, 442)
 
 [node name="BowPickup" parent="." unique_id=996792915 instance=ExtResource("3_locjh")]
 position = Vector2(638, 489)
-weaponScene = ExtResource("5_locjh")
+weaponScene = ExtResource("6_0hlja")
+
+[node name="Skeleton" parent="." unique_id=1046337729 instance=ExtResource("5_locjh")]
+position = Vector2(988, 421)
+
+[node name="UI" parent="." unique_id=1432553550 instance=ExtResource("5_16ny0")]

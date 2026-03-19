@@ -5,7 +5,7 @@ extends Node2D
 ## or perks in a run, we can make items that work for any weapons, like increasing attack speed wont
 ## break with a wepaon type 
 
-@export_range(0.0, 10.0, 0.1) var damage : float = 0.0
+@export_range(0.0, 100.0, 0.5) var damage : float = 0.0
 @export_range(0.01, 2.0, 0.01) var attackSpeed : float = 1.5 ##the duration between attacks. Smaller = faster attacks, slower = longer reload time
 @export_range(1.0, 100.0, 0.5) var attackRange : float = 1.0 ##for melee weapons, keep this shorter, for projectiles crank it 
 

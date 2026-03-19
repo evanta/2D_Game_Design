@@ -36,8 +36,8 @@ func _process(delta):
 
 
 func onBodyEntered(body):
-	if body is CharacterBody2D:
+	if body is Player:
 		return  # ignore the player
-	if body.has_method("take_damage"):
-		body.take_damage(damage)
+	if body.has_method("takeDamage"):
+		body.takeDamage(damage)
 	queue_free()

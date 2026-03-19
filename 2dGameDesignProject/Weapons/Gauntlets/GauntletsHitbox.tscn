@@ -6,32 +6,35 @@
 [ext_resource type="Texture2D" uid="uid://li8ewbaixnpy" path="res://Weapons/Gauntlets/Screenshot 2026-03-06 at 1.24 Background Removed.00 PM.png" id="4_on611"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_op2gq"]
-height = 20.0
+radius = 48.4
+height = 128.8
 
 [node name="GauntletsHitbox" type="Area2D" unique_id=2101078585]
 script = ExtResource("1_gmlnn")
 
 [node name="Capow" type="Sprite2D" parent="." unique_id=1896213199]
+modulate = Color(1, 1, 1, 0.6862745)
 z_index = 1
-position = Vector2(27.999998, -1.0000005)
+position = Vector2(100.99999, -9)
 rotation = 0.1844876
-scale = Vector2(0.09000245, 0.1699997)
+scale = Vector2(0.27631652, 0.63486797)
 texture = ExtResource("1_op2gq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1623611538]
-position = Vector2(6, -1)
+position = Vector2(48.323875, -1.5035553)
 shape = SubResource("CapsuleShape2D_op2gq")
-
-[node name="LeftSprite" type="Sprite2D" parent="." unique_id=873689414]
-unique_name_in_owner = true
-position = Vector2(9, -2.9999998)
-rotation = 1.9270103
-scale = Vector2(0.06, 0.06)
-texture = ExtResource("3_ag7x7")
 
 [node name="RightSprite" type="Sprite2D" parent="." unique_id=2126528226]
 unique_name_in_owner = true
-position = Vector2(8, 0.99999976)
+position = Vector2(22.323875, 0.49644488)
 rotation = 1.0181162
-scale = Vector2(0.06, 0.06)
+scale = Vector2(0.26999998, 0.26999998)
 texture = ExtResource("4_on611")
+
+[node name="LeftSprite" type="Sprite2D" parent="." unique_id=873689414]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.7058824)
+position = Vector2(23.323875, -3.503555)
+rotation = 1.9270103
+scale = Vector2(0.27, 0.27)
+texture = ExtResource("3_ag7x7")

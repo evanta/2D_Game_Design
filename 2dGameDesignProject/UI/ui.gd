@@ -3,14 +3,16 @@ extends CanvasLayer
 
 @onready var progress_bar: ProgressBar = %ProgressBar
 
-var currentPlayerHealth : float = 0.0 ##this should directly access the player health value, once the player exists
-var maxPlayerHealth : float = 100.0
+var currentPlayerHealth : float  ##this should directly access the player health value, once the player exists
+var maxPlayerHealth : float 
+
+var player = null
 
 func _ready() -> void:
-	#currentPlayerHealth = PlayerClass.currentHealth
-	#maxPlayerHealth = PlayerClass.maxHealth
-	pass
+	player = get_tree().get_first_node_in_group("player")
+	currentPlayerHealth = player.currentHealth
+	maxPlayerHealth = player.maxHealth
 
-func _process(delta: float) -> void:
-	## there are cleaner ways to do this but am waiting to see how archtecture plays out since player has not been set up yet
-	progress_bar.value = currentPlayerHealth / maxPlayerHealth
+func _process(delta: float):
+	if player:
+		progress_bar.value = player.currentHealth / player.maxHealth * 100

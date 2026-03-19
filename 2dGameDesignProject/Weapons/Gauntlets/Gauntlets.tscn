@@ -8,20 +8,21 @@
 [node name="Gauntlets" type="Node2D" unique_id=1868553893]
 script = ExtResource("1_gpb42")
 hitbox_scene = ExtResource("2_tbwpf")
+damage = 20.0
 attackSpeed = 0.2
 
 [node name="LeftGloves" type="Sprite2D" parent="." unique_id=2096270892]
 unique_name_in_owner = true
 position = Vector2(8.797163, -4.8510656)
 rotation = 1.9270103
-scale = Vector2(0.09, 0.09)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_d7sbr")
 
 [node name="RightGloves" type="Sprite2D" parent="." unique_id=1691569225]
 unique_name_in_owner = true
 position = Vector2(9.797178, 4.1489296)
 rotation = 1.6548522
-scale = Vector2(0.09, 0.09)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_gpb42")
 
 [node name="FORTESTING" type="Camera2D" parent="." unique_id=92658156]
