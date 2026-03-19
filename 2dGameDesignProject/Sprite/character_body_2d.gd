@@ -6,7 +6,7 @@ extends CharacterBody2D
 @export var health: float = 100.0
 @export var speed: float = 200.0
 @export var gravity: float = 900.0
-@export var jumpForce: float = 400.0
+@export var jumpForce: float = 200.0
 
 
 var slotOffset = 45.0
