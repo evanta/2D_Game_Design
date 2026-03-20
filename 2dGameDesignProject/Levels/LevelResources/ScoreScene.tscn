@@ -67,3 +67,4 @@ layout_mode = 2
 
 [node name="RestartButton" type="Button" parent="Control/PanelContainer/VBoxContainer/HBoxContainer" unique_id=1208076825]
 layout_mode = 2
+text = "Restart Level"
