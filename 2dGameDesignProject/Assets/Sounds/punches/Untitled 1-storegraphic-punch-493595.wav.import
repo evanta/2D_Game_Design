@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c8fkruy6al8ha"
+path="res://.godot/imported/Untitled 1-storegraphic-punch-493595.wav-74d307b8a86606447a6318dc56ae266c.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/punches/Untitled 1-storegraphic-punch-493595.wav"
+dest_files=["res://.godot/imported/Untitled 1-storegraphic-punch-493595.wav-74d307b8a86606447a6318dc56ae266c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
