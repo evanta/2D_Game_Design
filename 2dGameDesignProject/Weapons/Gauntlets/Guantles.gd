@@ -21,3 +21,4 @@ func performAttack():
 	await get_tree().create_timer(attackSpeed).timeout
 	left_gloves.visible = true
 	right_gloves.visible = true
+	$AudioStreamPlayer2D.play()

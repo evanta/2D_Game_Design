@@ -16,3 +16,4 @@ func performAttack():
 	# size the hitbox based on weapon_range
 	# position it in front of the sword
 	add_child(hitbox)
+	$AudioStreamPlayer2D.play()

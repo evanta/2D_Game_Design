@@ -27,3 +27,4 @@ func performAttack():
 	arrow.global_position = global_position
 	arrow.z_index = 100
 	print("Arrow z: ", arrow.z_index, " visible: ", arrow.visible, " modulate: ", arrow.modulate)
+	$AudioStreamPlayer2D.play()

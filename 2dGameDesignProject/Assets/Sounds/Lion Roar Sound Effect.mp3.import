@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cvl8j14ct2esl"
+path="res://.godot/imported/Lion Roar Sound Effect.mp3-46518b58451ee1f9393a292e027534f6.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/Lion Roar Sound Effect.mp3"
+dest_files=["res://.godot/imported/Lion Roar Sound Effect.mp3-46518b58451ee1f9393a292e027534f6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
