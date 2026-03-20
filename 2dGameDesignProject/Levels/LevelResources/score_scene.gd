@@ -6,6 +6,7 @@ extends CanvasLayer
 @onready var healthLabel: Label = $Control/PanelContainer/VBoxContainer/HealthLabel
 @onready var totalLabel: Label = $Control/PanelContainer/VBoxContainer/TotalLabel
 @onready var restartButton: Button = $Control/PanelContainer/VBoxContainer/HBoxContainer/RestartButton
+@onready var headshots_label: Label = $Control/PanelContainer/VBoxContainer/HeadshotsLabel
 
 
 @export var currentLevelScene: String = ""
@@ -14,6 +15,7 @@ func _ready():
 	visible = false
 	process_mode = Node.PROCESS_MODE_ALWAYS 
 	restartButton.pressed.connect(_onRestartPressed)
+	headshots_label.visible = false
 
 func displayScore(scoreData: Dictionary):
 	titleLabel.text = "LEVEL COMPLETE!"
@@ -21,12 +23,20 @@ func displayScore(scoreData: Dictionary):
 	timeLabel.text = "Time: " + str(snapped(scoreData.timeTaken, 0.1)) + "s"
 	healthLabel.text = "Health: " + str(scoreData.health) + "/" + str(scoreData.maxHealth)
 	totalLabel.text = "TOTAL SCORE: " + str(snapped(scoreData.finalScore, 0.1))
+	
+	var labels = [titleLabel, enemiesLabel, timeLabel, healthLabel]
+	
+	if scoreData.headshots > 0:
+		headshots_label.text = "Headshots: " + str(scoreData.headshots)
+		headshots_label.visible = true
+		labels.append(headshots_label)
+	
+	labels.append(totalLabel)
+	
 	visible = true
 	
-	var labels = [titleLabel, enemiesLabel, timeLabel, healthLabel, totalLabel]
 	for label in labels:
 		label.visible_ratio = 0.0
-
 	var tween = create_tween()
 	for label in labels:
 		tween.tween_property(label, "visible_ratio", 1.0, 0.5)

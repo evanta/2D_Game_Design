@@ -4,6 +4,7 @@ var enemiesKilled: int = 0
 var levelTime: float = 0.0
 var tracking: bool = false
 var scoreScreen: PackedScene = preload("res://Levels/LevelResources/ScoreScene.tscn")
+var headshots: int = 0
 
 func _ready():
 	resetLevel()
@@ -16,6 +17,7 @@ func resetLevel():
 	enemiesKilled = 0
 	levelTime = 0.0
 	tracking = true
+	headshots = 0
 
 func registerKill():
 	enemiesKilled += 1

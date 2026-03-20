@@ -10,6 +10,7 @@ Label/font_sizes/font_size = 22
 
 [node name="ScoreScene" type="CanvasLayer" unique_id=2113728801]
 script = ExtResource("1_x0ndm")
+currentLevelScene = null
 
 [node name="Control" type="Control" parent="." unique_id=187260779]
 layout_mode = 3
@@ -53,6 +54,9 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="HealthLabel" type="Label" parent="Control/PanelContainer/VBoxContainer" unique_id=564357322]
+layout_mode = 2
+
+[node name="HeadshotsLabel" type="Label" parent="Control/PanelContainer/VBoxContainer" unique_id=168587433]
 layout_mode = 2
 
 [node name="HSeparator2" type="HSeparator" parent="Control/PanelContainer/VBoxContainer" unique_id=797555885]

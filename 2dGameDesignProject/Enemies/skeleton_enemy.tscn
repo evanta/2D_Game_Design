@@ -147,7 +147,10 @@ animations = [{
 size = Vector2(10.377, 38.467)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fcdv1"]
-size = Vector2(46.43254, 94.049614)
+size = Vector2(63.457817, 62.217438)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fcdv1"]
+radius = 16.731358
 
 [node name="Skeleton" type="CharacterBody2D" unique_id=1046337729]
 scale = Vector2(1.6152468, 1.3822494)
@@ -159,15 +162,36 @@ scale = Vector2(1.8250564, 1.8913183)
 sprite_frames = SubResource("SpriteFrames_euxau")
 animation = &"Walking"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1761152229]
-position = Vector2(-0.6191001, 15.916079)
-scale = Vector2(2.3999991, 2.3999991)
+[node name="PhysicsCollision" type="CollisionShape2D" parent="." unique_id=1761152229]
+position = Vector2(-0.61910003, 15.916077)
+scale = Vector2(2.399999, 2.399999)
 shape = SubResource("RectangleShape2D_6vt0i")
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=2113888661]
 unique_name_in_owner = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1476053682]
-position = Vector2(0.30954897, 17.363003)
-scale = Vector2(0.99999964, 0.99999964)
+position = Vector2(4.798028, 31.832157)
+scale = Vector2(0.9999994, 0.9999994)
 shape = SubResource("RectangleShape2D_fcdv1")
+
+[node name="Headshot" type="Area2D" parent="." unique_id=128045750]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Headshot" unique_id=1411102221]
+position = Vector2(-4.333703, -15.192629)
+shape = SubResource("CircleShape2D_fcdv1")
+
+[node name="HeadshotLabel" type="RichTextLabel" parent="." unique_id=1776219559]
+visible = false
+modulate = Color(1, 0.48610443, 0.41860744, 1)
+self_modulate = Color(1, 1, 1, 0.9019608)
+offset_left = -42.09883
+offset_top = -49.918633
+offset_right = 45.19432
+offset_bottom = -26.918633
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+bbcode_enabled = true
+text = "[i]Headshot!"
+fit_content = true
+horizontal_alignment = 1

@@ -4,6 +4,7 @@ var damage : float = 0.0
 var speed : float = 500.0
 var direction : float = 1.0
 var lifetime : float = 1.0
+var hasHit = false
 
 func setup(dmg : float, dir : float, rng : float):
 	damage = dmg
@@ -13,15 +14,9 @@ func setup(dmg : float, dir : float, rng : float):
 		scale.x = -1
 
 func _ready():
+	add_to_group("projectile")
 	body_entered.connect(onBodyEntered)
-	await get_tree().create_timer(lifetime).timeout
-	queue_free()
-	
-	print("Arrow children: ", get_children())
-	for child in get_children():
-		print(child.name, " visible: ", child.visible if child is CanvasItem else "n/a")
-	
-	body_entered.connect(onBodyEntered)
+	area_entered.connect(onAreaEntered)
 	await get_tree().create_timer(lifetime).timeout
 	queue_free()
 
@@ -36,8 +31,45 @@ func _process(delta):
 
 
 func onBodyEntered(body):
-	if body is Player:
-		return 
+	print("BODY HIT: ", body.name, " groups: ", body.get_groups())
+	if hasHit:
+		print("Already hit, ignoring")
+		return
+	if body.is_in_group("player"):
+		print("Hit player, ignoring")
+		return
+	hasHit = true
+	print("Processing hit on: ", body.name)
+	
+	var overlapping = get_overlapping_areas()
+	print("Overlapping areas: ", overlapping)
+	for area in overlapping:
+		if area.name == "Headshot":
+			area.get_parent().onHeadshot()
+			queue_free()
+			return
+	
 	if body.has_method("takeDamage"):
 		body.takeDamage(damage)
+	queue_free()
+
+func onAreaEntered(area):
+	print("AREA HIT: ", area.name, " parent: ", area.get_parent().name)
+	if hasHit:
+		return
+	if area.is_in_group("player"):
+		return
+	hasHit = true
+	
+	if area.name == "Headshot":
+		area.get_parent().onHeadshot()
+	elif area.name == "Hitbox":
+		var overlapping = get_overlapping_areas()
+		for a in overlapping:
+			if a.name == "Headshot":
+				a.get_parent().onHeadshot()
+				queue_free()
+				return
+		area.get_parent().takeDamage(damage)
+	
 	queue_free()
