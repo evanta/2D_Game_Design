@@ -22,9 +22,9 @@ func attack():
 
 func performAttack():
 	var arrow = projectile_scene.instantiate()
-	arrow.setup(damage, direction, attackRange)
+	var dir = -1.0 if get_parent().scale.x < 0 else 1.0
+	arrow.setup(damage, dir, attackRange)
 	get_tree().current_scene.add_child(arrow)
 	arrow.global_position = global_position
 	arrow.z_index = 100
-	print("Arrow z: ", arrow.z_index, " visible: ", arrow.visible, " modulate: ", arrow.modulate)
 	$AudioStreamPlayer2D.play()

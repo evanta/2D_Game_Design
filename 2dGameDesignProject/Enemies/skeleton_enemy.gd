@@ -24,7 +24,7 @@ var knockbackVelocity = Vector2.ZERO
 @onready var headshot_label: RichTextLabel = $HeadshotLabel
 var startingLabelPos : Vector2
 
-
+var collisionBoxes : Array = [ $PhysicsCollision, $Hitbox/HitboxShape, $Headshot/HeadshotShape]
 func _ready():
 	headshot_label.visible = false
 	startingLabelPos =   headshot_label.position
@@ -66,6 +66,10 @@ func takeDamage(amount: float):
 		die()
 
 func onHeadshot():
+	set_physics_process(false)
+	for shape in collisionBoxes:
+		if shape is CollisionShape2D:
+			shape.disabled = true
 	headshot_label.position = startingLabelPos
 	headshot_label.modulate.a = 1.0
 	headshot_label.visible = true
@@ -73,6 +77,7 @@ func onHeadshot():
 	var tween = create_tween().set_parallel().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
 	tween.tween_property(headshot_label, ^"position", startingLabelPos + Vector2(2.0, -4.0), 0.5)
 	tween.tween_property(headshot_label, ^"modulate:a", 0.0, 0.5)
+	flashRed()
 	flashRed()
 	tween.finished.connect(func(): 
 		headshot_label.visible = false

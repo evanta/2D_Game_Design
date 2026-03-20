@@ -20,15 +20,15 @@ func _ready():
 
 func displayScore(scoreData: Dictionary):
 	titleLabel.text = "LEVEL COMPLETE!"
-	enemiesLabel.text = "Enemies Killed: " + str(scoreData.enemiesKilled) + "/" + str(scoreData.totalEnemies)
-	timeLabel.text = "Time: " + str(snapped(scoreData.timeTaken, 0.1)) + "s"
-	healthLabel.text = "Health: " + str(scoreData.health) + "/" + str(scoreData.maxHealth)
+	enemiesLabel.text = "Enemies Killed: " + str(scoreData.enemiesKilled) + "/" + str(scoreData.totalEnemies) + " = " + str(snapped(scoreData.enemyScore, 0.1)) + " pts"
+	timeLabel.text = "Time: " + str(snapped(scoreData.timeTaken, 0.1)) + "s / " + str(scoreData.parTime) + "s = " + str(snapped(scoreData.timeScore, 0.1)) + " pts"
+	healthLabel.text = "Health: " + str(scoreData.health) + "/" + str(scoreData.maxHealth) + " = " + str(snapped(scoreData.healthScore, 0.1)) + " pts"
 	totalLabel.text = "TOTAL SCORE: " + str(snapped(scoreData.finalScore, 0.1))
 	
 	var labels = [titleLabel, enemiesLabel, timeLabel, healthLabel]
 	
 	if scoreData.headshots > 0:
-		headshots_label.text = "Headshots: " + str(scoreData.headshots)
+		headshots_label.text = "Headshots: " + str(scoreData.headshots) + " = " + str(snapped(scoreData.headshotScore, 0.1)) + " pts"
 		headshots_label.visible = true
 		labels.append(headshots_label)
 	

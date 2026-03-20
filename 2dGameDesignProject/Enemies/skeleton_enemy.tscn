@@ -170,14 +170,14 @@ shape = SubResource("RectangleShape2D_6vt0i")
 [node name="Hitbox" type="Area2D" parent="." unique_id=2113888661]
 unique_name_in_owner = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1476053682]
+[node name="HitboxShape" type="CollisionShape2D" parent="Hitbox" unique_id=1476053682]
 position = Vector2(4.798028, 31.832157)
 scale = Vector2(0.9999994, 0.9999994)
 shape = SubResource("RectangleShape2D_fcdv1")
 
 [node name="Headshot" type="Area2D" parent="." unique_id=128045750]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Headshot" unique_id=1411102221]
+[node name="HeadshotShape" type="CollisionShape2D" parent="Headshot" unique_id=1411102221]
 position = Vector2(-4.333703, -15.192629)
 shape = SubResource("CircleShape2D_fcdv1")
 
