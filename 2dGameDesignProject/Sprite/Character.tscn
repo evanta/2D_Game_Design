@@ -103,7 +103,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tyfn0"]
 size = Vector2(102, 124)
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=2039678697]
+[node name="Player" type="CharacterBody2D" unique_id=2039678697]
 scale = Vector2(0.36783552, 0.38528612)
 script = ExtResource("1_yk651")
 speed = 300.0

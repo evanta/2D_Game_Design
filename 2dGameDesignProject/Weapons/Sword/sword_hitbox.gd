@@ -26,3 +26,12 @@ func onBodyEntered(body):
 	if body.has_method("applyKnockback"):
 		var knockDir = (body.global_position - global_position).normalized()
 		body.applyKnockback(knockDir, 200.0)
+	# player recoil on hit
+	# player recoil on hit
+# player recoil on hit
+	var player = get_tree().get_first_node_in_group("player")
+	if player:
+		var recoilDir = (player.global_position - body.global_position).normalized()
+		recoilDir.y = 0
+		var tween = create_tween()
+		tween.tween_property(player, "position", player.position + recoilDir * 15.0, 0.1)

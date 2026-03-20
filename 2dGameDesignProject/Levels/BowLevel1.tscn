@@ -617,7 +617,7 @@ weaponType = 1
 [node name="UI" parent="." unique_id=1432553550 instance=ExtResource("7_e3dax")]
 
 [node name="FinishLevel" parent="." unique_id=492503270 instance=ExtResource("8_7wlkq")]
-position = Vector2(1360, 454)
+position = Vector2(3549, 537)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1066968124]
 position = Vector2(216, 494)

@@ -45,9 +45,12 @@ grow_horizontal = 0
 
 [node name="PreviousScoreLabel" type="Label" parent="Control/HBoxContainer2" unique_id=1793869050]
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 25
 
 [node name="BestScoreLabel" type="Label" parent="Control/HBoxContainer2" unique_id=353331399]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
-theme_override_font_sizes/font_size = 19
+theme_override_font_sizes/font_size = 25
