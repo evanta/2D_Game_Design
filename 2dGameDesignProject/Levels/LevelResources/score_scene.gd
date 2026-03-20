@@ -7,7 +7,7 @@ extends CanvasLayer
 @onready var totalLabel: Label = $Control/PanelContainer/VBoxContainer/TotalLabel
 @onready var restartButton: Button = $Control/PanelContainer/VBoxContainer/HBoxContainer/RestartButton
 @onready var headshots_label: Label = $Control/PanelContainer/VBoxContainer/HeadshotsLabel
-
+@onready var gradeLabel: Label = $Control/PanelContainer/VBoxContainer/GradeLabel
 
 @export var currentLevelScene: String = ""
 
@@ -16,6 +16,7 @@ func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS 
 	restartButton.pressed.connect(_onRestartPressed)
 	headshots_label.visible = false
+	gradeLabel.visible = false
 
 func displayScore(scoreData: Dictionary):
 	titleLabel.text = "LEVEL COMPLETE!"
@@ -33,6 +34,13 @@ func displayScore(scoreData: Dictionary):
 	
 	labels.append(totalLabel)
 	
+	## grade comes last for the big reveal
+	if scoreData.has("grade"):
+		gradeLabel.text = "GRADE: " + scoreData.grade
+		gradeLabel.visible = true
+		colorGrade(scoreData.grade)
+		labels.append(gradeLabel)
+	
 	visible = true
 	
 	for label in labels:
@@ -40,6 +48,15 @@ func displayScore(scoreData: Dictionary):
 	var tween = create_tween()
 	for label in labels:
 		tween.tween_property(label, "visible_ratio", 1.0, 0.5)
+
+func colorGrade(grade : String):
+	match grade:
+		"S": gradeLabel.modulate = Color.GOLD
+		"A": gradeLabel.modulate = Color.GREEN
+		"B": gradeLabel.modulate = Color.CYAN
+		"C": gradeLabel.modulate = Color.YELLOW
+		"D": gradeLabel.modulate = Color.ORANGE
+		"F": gradeLabel.modulate = Color.RED
 
 func _onRestartPressed():
 	get_tree().paused = false

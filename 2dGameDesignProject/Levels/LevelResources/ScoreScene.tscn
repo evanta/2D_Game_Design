@@ -10,7 +10,6 @@ Label/font_sizes/font_size = 22
 
 [node name="ScoreScene" type="CanvasLayer" unique_id=2113728801]
 script = ExtResource("1_x0ndm")
-currentLevelScene = null
 
 [node name="Control" type="Control" parent="." unique_id=187260779]
 layout_mode = 3
@@ -65,6 +64,9 @@ layout_mode = 2
 [node name="TotalLabel" type="Label" parent="Control/PanelContainer/VBoxContainer" unique_id=1668342465]
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
+
+[node name="GradeLabel" type="Label" parent="Control/PanelContainer/VBoxContainer" unique_id=1980341379]
+layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/PanelContainer/VBoxContainer" unique_id=554372752]
 layout_mode = 2
