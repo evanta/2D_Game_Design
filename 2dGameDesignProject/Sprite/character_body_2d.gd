@@ -72,9 +72,14 @@ func equipWeapon(weaponScene: PackedScene):
 	print("weapon added to slot, calling setup")
 	weapon.setup(self)
 
+func flashRed():
+	modulate = Color.RED
+	await get_tree().create_timer(0.15).timeout
+	modulate = Color.WHITE
 
 func takeDamage(amount: float):
 	currentHealth -= amount
+	flashRed()
 	if currentHealth <= 0:
 		var tween = create_tween()
 		tween.set_parallel()
@@ -83,6 +88,7 @@ func takeDamage(amount: float):
 		tween.finished.connect(die)
 func die():
 	get_tree().reload_current_scene()
+	ScoreManager.resetLevel()
 
 func fallRespawn():
 	takeDamage(25.0)

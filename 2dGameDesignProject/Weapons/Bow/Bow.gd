@@ -13,7 +13,7 @@ func attack():
 	canAttack = false
 	bowSprite.visible = false
 	drawnSprite.visible = true
-	await get_tree().create_timer(attackSpeed / 3.0 ).timeout
+	await get_tree().create_timer(attackSpeed / 5.0 ).timeout
 	drawnSprite.visible = false
 	bowSprite.visible = true
 	performAttack()

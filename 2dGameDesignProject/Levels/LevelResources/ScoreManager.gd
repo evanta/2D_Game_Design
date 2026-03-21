@@ -27,6 +27,7 @@ func resetLevel():
 
 func registerKill():
 	enemiesKilled += 1
+	print("something just used me")
 
 
 func showScore(scoreData: Dictionary):

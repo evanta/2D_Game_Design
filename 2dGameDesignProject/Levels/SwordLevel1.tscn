@@ -634,7 +634,7 @@ shape = SubResource("RectangleShape2D_xyq0l")
 
 [node name="FinishLevel" parent="." unique_id=492503270 instance=ExtResource("8_xyq0l")]
 position = Vector2(6480, 552)
-sMinScore = 2400.0
-aMinScore = 2150.0
+sMinScore = 2300.0
+aMinScore = 2100.0
 bMinScore = 1850.0
 cMinScore = 1400.0

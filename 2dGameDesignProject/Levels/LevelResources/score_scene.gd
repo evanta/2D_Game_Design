@@ -51,7 +51,9 @@ func displayScore(scoreData: Dictionary):
 
 func colorGrade(grade : String):
 	match grade:
-		"S": gradeLabel.modulate = Color.GOLD
+		"S": 
+			var colorTween = create_tween().set_loops()
+			colorTween.tween_method(func(h): gradeLabel.modulate = Color.from_hsv(h, 1.0, 1.0), 0.0, 1.0, 2.0)
 		"A": gradeLabel.modulate = Color.GREEN
 		"B": gradeLabel.modulate = Color.CYAN
 		"C": gradeLabel.modulate = Color.YELLOW
