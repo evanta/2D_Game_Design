@@ -25,6 +25,8 @@ var knockbackVelocity = Vector2.ZERO
 var startingLabelPos : Vector2
 
 var collisionBoxes : Array = [ $PhysicsCollision, $Hitbox/HitboxShape, $Headshot/HeadshotShape]
+@onready var physics_collision: CollisionShape2D = $PhysicsCollision
+
 func _ready():
 	headshot_label.visible = false
 	startingLabelPos =   headshot_label.position
@@ -64,6 +66,7 @@ func takeDamage(amount: float):
 	print("Enemy took ", amount, " damage! Health: ", health)
 	flashRed()
 	if health <= 0:
+		physics_collision.set_deferred("disabled", true) 
 		die()
 
 func onHeadshot():
