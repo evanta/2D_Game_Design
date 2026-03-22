@@ -44,6 +44,7 @@ func _ready():
 	print("Prompt position: ", prompt.position)
 	print("Prompt in tree: ", prompt.is_inside_tree())
 
+@warning_ignore("unused_parameter")
 func _on_body_exited(body):
 	playerInRange = false
 	prompt.visible = false
@@ -52,6 +53,7 @@ func _input(event):
 	if event.is_action_pressed("interact") and playerInRange:
 		var player = get_tree().get_first_node_in_group("player")
 		print("player found: ", player)
+		$"../AudioStreamPlayer2D".play() #for sound to play when player picks up weapon
 		if player:
 			player.equipWeapon(weaponScene)
 			queue_free()
