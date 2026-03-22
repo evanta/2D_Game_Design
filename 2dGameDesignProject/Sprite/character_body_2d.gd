@@ -20,6 +20,7 @@ func _ready() -> void:
 	lastSafePosition = global_position
 
 func _physics_process(delta):
+	print(velocity.y)
 	# Gravity
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -34,6 +35,10 @@ func _physics_process(delta):
 		dir = 1
 	elif Input.is_action_pressed("moveLeft"):
 		dir = -1
+		
+	#down movement
+	if Input.is_action_just_pressed("moveDown") and (velocity.y > -200 and velocity.y < 200): 
+		velocity.y = jumpForce * 2 
 
 	velocity.x = dir * speed
 
