@@ -22,7 +22,6 @@ func _ready() -> void:
 	camera_2d.zoom = Vector2(cameraZoom, cameraZoom)
 
 func _physics_process(delta):
-	print(velocity.y)
 	# Gravity
 	if not is_on_floor():
 		velocity.y += gravity * delta
