@@ -37,6 +37,7 @@ func onBodyEntered(body):
 
 
 func _physics_process(delta: float) -> void:
+	
 	anim.play("Walking")
 	
 	if not is_on_floor():
@@ -90,5 +91,16 @@ func flashRed():
 	modulate = Color.WHITE
 
 func die():
+	anim.play("Death")
+	
+	# Make it stop walking
+	set_physics_process(false)
+	
+	# Disable collisions
+	$Hitbox/HitboxShape.set_deferred("disabled", true)
+	$Headshot/HeadshotShape.set_deferred("disabled", true)
+	
+	# Remove it from the level
+	await anim.animation_finished
 	queue_free()
 	ScoreManager.registerKill()
