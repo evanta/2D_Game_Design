@@ -17,11 +17,17 @@ var direction = 1
 @export var max_walk_distance = 50 
 var start = 0 
 var traveled_distance = 0
+@onready var headshot: Area2D = $Headshot
 
 var knockbackVelocity = Vector2.ZERO
 @onready var hitbox: Area2D = %Hitbox
+@onready var headshot_label: RichTextLabel = $HeadshotLabel
+var startingLabelPos : Vector2
 
+var collisionBoxes : Array = [ $PhysicsCollision, $Hitbox/HitboxShape, $Headshot/HeadshotShape]
 func _ready():
+	headshot_label.visible = false
+	startingLabelPos =   headshot_label.position
 	add_to_group("enemy")
 	hitbox.body_entered.connect(onBodyEntered)
 
@@ -31,6 +37,7 @@ func onBodyEntered(body):
 
 
 func _physics_process(delta: float) -> void:
+	
 	anim.play("Walking")
 	
 	if not is_on_floor():
@@ -59,11 +66,41 @@ func takeDamage(amount: float):
 	if health <= 0:
 		die()
 
+func onHeadshot():
+	set_physics_process(false)
+	for shape in collisionBoxes:
+		if shape is CollisionShape2D:
+			shape.disabled = true
+	headshot_label.position = startingLabelPos
+	headshot_label.modulate.a = 1.0
+	headshot_label.visible = true
+	
+	var tween = create_tween().set_parallel().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
+	tween.tween_property(headshot_label, ^"position", startingLabelPos + Vector2(2.0, -4.0), 0.5)
+	tween.tween_property(headshot_label, ^"modulate:a", 0.0, 0.5)
+	flashRed()
+	flashRed()
+	tween.finished.connect(func(): 
+		headshot_label.visible = false
+		ScoreManager.headshots += 1
+		die())
+
 func flashRed():
 	modulate = Color.RED
 	await get_tree().create_timer(0.15).timeout
 	modulate = Color.WHITE
 
 func die():
+	anim.play("Death")
+	
+	# Make it stop walking
+	set_physics_process(false)
+	
+	# Disable collisions
+	$Hitbox/HitboxShape.set_deferred("disabled", true)
+	$Headshot/HeadshotShape.set_deferred("disabled", true)
+	
+	# Remove it from the level
+	await anim.animation_finished
 	queue_free()
 	ScoreManager.registerKill()

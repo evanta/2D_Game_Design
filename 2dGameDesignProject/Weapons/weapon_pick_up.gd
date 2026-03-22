@@ -50,7 +50,6 @@ func _on_body_exited(body):
 
 func _input(event):
 	if event.is_action_pressed("interact") and playerInRange:
-		$"../AudioStreamPlayer2D".play()
 		var player = get_tree().get_first_node_in_group("player")
 		print("player found: ", player)
 		if player:

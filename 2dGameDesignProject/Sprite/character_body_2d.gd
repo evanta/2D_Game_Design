@@ -13,11 +13,13 @@ extends CharacterBody2D
 var lastSafePosition: Vector2 = Vector2.ZERO
 var safePositionTimer: float = 0.0
 var slotOffset = 45.0
-
+@onready var camera_2d: Camera2D = $Camera2D
+@export var cameraZoom : float = 1.1
 
 func _ready() -> void:
 	add_to_group("player")
 	lastSafePosition = global_position
+	camera_2d.zoom = Vector2(cameraZoom, cameraZoom)
 
 func _physics_process(delta):
 	print(velocity.y)
@@ -28,6 +30,7 @@ func _physics_process(delta):
 	# Jump
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = -jumpForce
+
 
 	# Horizontal movement
 	var dir := 0
@@ -74,9 +77,14 @@ func equipWeapon(weaponScene: PackedScene):
 	print("weapon added to slot, calling setup")
 	weapon.setup(self)
 
+func flashRed():
+	modulate = Color.RED
+	await get_tree().create_timer(0.15).timeout
+	modulate = Color.WHITE
 
 func takeDamage(amount: float):
 	currentHealth -= amount
+	flashRed()
 	if currentHealth <= 0:
 		var tween = create_tween()
 		tween.set_parallel()
@@ -85,6 +93,7 @@ func takeDamage(amount: float):
 		tween.finished.connect(die)
 func die():
 	get_tree().reload_current_scene()
+	ScoreManager.resetLevel()
 
 func fallRespawn():
 	takeDamage(25.0)
