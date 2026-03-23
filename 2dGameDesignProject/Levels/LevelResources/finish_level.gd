@@ -27,6 +27,8 @@ func _onBodyEntered(body):
 		var levelPath = get_tree().current_scene.scene_file_path
 		ScoreManager.saveScore(levelPath, score.finalScore)
 		ScoreManager.showScore(score)
+		if SceneManager.canAdvance(grade):
+			SceneManager.unlockNextLevel(levelPath)
 
 func getGrade(score : float) -> String:
 	if score >= sMinScore:

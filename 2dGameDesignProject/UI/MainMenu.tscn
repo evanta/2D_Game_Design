@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://b4kdxxnlx0ojs"]
+
+[ext_resource type="Script" uid="uid://dumh7w2yj328g" path="res://UI/main_menu.gd" id="1_uahxu"]
+
+[node name="MainMenu" type="Control" unique_id=1402789995]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uahxu")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1995891921]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -180.5
+offset_right = 180.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StartGame" type="Button" parent="VBoxContainer" unique_id=1900191732]
+layout_mode = 2
+text = "Start Game"
+
+[node name="WeaponContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=601639302]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GauntletsLevelsContainer" type="VBoxContainer" parent="VBoxContainer/WeaponContainer" unique_id=958104585]
+layout_mode = 2
+
+[node name="ShowGauntletsLevels" type="Button" parent="VBoxContainer/WeaponContainer/GauntletsLevelsContainer" unique_id=1644622246]
+layout_mode = 2
+text = "Gauntlets Levels"
+
+[node name="GauntletsLevels" type="VBoxContainer" parent="VBoxContainer/WeaponContainer/GauntletsLevelsContainer" unique_id=1977868170]
+layout_mode = 2
+
+[node name="GaunletsLevel1" type="Button" parent="VBoxContainer/WeaponContainer/GauntletsLevelsContainer/GauntletsLevels" unique_id=80150256]
+layout_mode = 2
+text = "Gaunlets Level 1 "
+
+[node name="GaunletsLevel2" type="Button" parent="VBoxContainer/WeaponContainer/GauntletsLevelsContainer/GauntletsLevels" unique_id=643698921]
+layout_mode = 2
+text = "Gaunlets Level 2"
+
+[node name="GaunletsLevel3" type="Button" parent="VBoxContainer/WeaponContainer/GauntletsLevelsContainer/GauntletsLevels" unique_id=1824649880]
+layout_mode = 2
+text = "Gaunlets Level 3"
+
+[node name="GaunletsLevel4" type="Button" parent="VBoxContainer/WeaponContainer/GauntletsLevelsContainer/GauntletsLevels" unique_id=1508479826]
+layout_mode = 2
+text = "Gaunlets Level 4"
+
+[node name="SwordLevelsContainer" type="VBoxContainer" parent="VBoxContainer/WeaponContainer" unique_id=1004356079]
+layout_mode = 2
+
+[node name="ShowSwordLevels" type="Button" parent="VBoxContainer/WeaponContainer/SwordLevelsContainer" unique_id=225363474]
+layout_mode = 2
+text = "Sword Levels"
+
+[node name="SwordLevels" type="VBoxContainer" parent="VBoxContainer/WeaponContainer/SwordLevelsContainer" unique_id=231323967]
+layout_mode = 2
+
+[node name="SwordLevel1" type="Button" parent="VBoxContainer/WeaponContainer/SwordLevelsContainer/SwordLevels" unique_id=1127575853]
+layout_mode = 2
+text = "Sword Level 1"
+
+[node name="SwordLevel2" type="Button" parent="VBoxContainer/WeaponContainer/SwordLevelsContainer/SwordLevels" unique_id=1442143944]
+layout_mode = 2
+text = "Sword Level 2"
+
+[node name="SwordLevel3" type="Button" parent="VBoxContainer/WeaponContainer/SwordLevelsContainer/SwordLevels" unique_id=1537236511]
+layout_mode = 2
+text = "Sword Level 3"
+
+[node name="SwordLevel4" type="Button" parent="VBoxContainer/WeaponContainer/SwordLevelsContainer/SwordLevels" unique_id=1796374437]
+layout_mode = 2
+text = "Sword Level 4"
+
+[node name="BowLevelsContainer" type="VBoxContainer" parent="VBoxContainer/WeaponContainer" unique_id=1991531960]
+layout_mode = 2
+
+[node name="ShowBowLevels" type="Button" parent="VBoxContainer/WeaponContainer/BowLevelsContainer" unique_id=353838813]
+layout_mode = 2
+text = "Bow Levels"
+
+[node name="BowLevels" type="VBoxContainer" parent="VBoxContainer/WeaponContainer/BowLevelsContainer" unique_id=729355558]
+layout_mode = 2
+
+[node name="BowLevel1" type="Button" parent="VBoxContainer/WeaponContainer/BowLevelsContainer/BowLevels" unique_id=727937137]
+layout_mode = 2
+text = "Bow Level 1"
+
+[node name="BowLevel2" type="Button" parent="VBoxContainer/WeaponContainer/BowLevelsContainer/BowLevels" unique_id=320211220]
+layout_mode = 2
+text = "Bow Level 2"
+
+[node name="BowLevel3" type="Button" parent="VBoxContainer/WeaponContainer/BowLevelsContainer/BowLevels" unique_id=2029138278]
+layout_mode = 2
+text = "Bow Level 3"
+
+[node name="BowLevel4" type="Button" parent="VBoxContainer/WeaponContainer/BowLevelsContainer/BowLevels" unique_id=1262495554]
+layout_mode = 2
+text = "Bow Level 4"

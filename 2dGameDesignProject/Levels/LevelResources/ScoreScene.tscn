@@ -74,3 +74,12 @@ layout_mode = 2
 [node name="RestartButton" type="Button" parent="Control/PanelContainer/VBoxContainer/HBoxContainer" unique_id=1208076825]
 layout_mode = 2
 text = "Restart Level"
+
+[node name="MainMenu" type="Button" parent="Control/PanelContainer/VBoxContainer/HBoxContainer" unique_id=1639137199]
+layout_mode = 2
+text = "Main Menu"
+
+[node name="NextLevelButton" type="Button" parent="Control/PanelContainer/VBoxContainer/HBoxContainer" unique_id=470175701]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "Next Level"

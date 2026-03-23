@@ -8,6 +8,8 @@ extends CanvasLayer
 @onready var styleKillsLabel: Label = $Control/PanelContainer/VBoxContainer/HeadshotsLabel
 @onready var gradeLabel: Label = $Control/PanelContainer/VBoxContainer/GradeLabel
 @export var currentLevelScene: String = ""
+@onready var next_level_button: Button = $Control/PanelContainer/VBoxContainer/HBoxContainer/NextLevelButton
+@onready var main_menu: Button = $Control/PanelContainer/VBoxContainer/HBoxContainer/MainMenu
 
 func _ready():
 	visible = false
@@ -15,6 +17,9 @@ func _ready():
 	restartButton.pressed.connect(_onRestartPressed)
 	styleKillsLabel.visible = false
 	gradeLabel.visible = false
+	next_level_button.pressed.connect(_onNextLevelPressed)
+	next_level_button.disabled = true
+	main_menu.pressed.connect(_onMainMenuPressed)
 
 func displayScore(scoreData: Dictionary):
 	titleLabel.text = "LEVEL COMPLETE!"
@@ -38,6 +43,11 @@ func displayScore(scoreData: Dictionary):
 		gradeLabel.visible = true
 		colorGrade(scoreData.grade)
 		labels.append(gradeLabel)
+		# Enable next level if grade is B or better and there IS a next level
+		if SceneManager.canAdvance(scoreData.grade) and SceneManager.getNextLevel(currentLevelScene) != "":
+			next_level_button.disabled = false
+		else:
+			next_level_button.disabled = true
 	
 	visible = true
 	
@@ -65,3 +75,11 @@ func _onRestartPressed():
 	else:
 		get_tree().reload_current_scene()
 	ScoreManager.resetLevel()
+
+
+func _onNextLevelPressed() -> void:
+	SceneManager.goToNextLevel(currentLevelScene)
+
+
+func _onMainMenuPressed():
+	SceneManager.goToMainMenu()

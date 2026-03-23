@@ -18,17 +18,18 @@ func setup(dmg : float, base_range : float, current_range : float):
 		var scale_factor = current_range / base_range
 		collision_shape_2d.shape.size.x += scale_factor
 		collision_shape_2d.shape.size.y += scale_factor
-
 func onBodyEntered(body):
 	if body is Player:
 		return
 	if body.has_method("takeDamage"):
 		var willKill = body.health - damage <= 0
-		body.takeDamage(damage)
-		if willKill and body.has_method("onStyleKill"):
-			var player = get_tree().get_first_node_in_group("player")
-			if player and player.downsmash:
-				body.onStyleKill("BONK!")
+		var isStyleKill = willKill and body.has_method("onStyleKill") and get_tree().get_first_node_in_group("player") and get_tree().get_first_node_in_group("player").downsmash
+		if isStyleKill:
+			body.health -= damage
+			body.flashRed()
+			body.onStyleKill("BONK!")
+		else:
+			body.takeDamage(damage)
 		if body.has_method("applyKnockback"):
 			var knockDir = (body.global_position - global_position).normalized()
 			body.applyKnockback(knockDir, 200.0)

@@ -58,11 +58,14 @@ func takeDamage(amount: float):
 		physics_collision.set_deferred("disabled", true)
 		die()
 
+
 func onStyleKill(label: String = "STYLE KILL!"):
 	set_physics_process(false)
+	physics_collision.set_deferred("disabled", true)
 	for shape in collisionBoxes:
 		if shape is CollisionShape2D:
-			shape.disabled = true
+			shape.set_deferred("disabled", true)
+	anim.play("Death")
 	headshot_label.text = "[center]" + label + "[/center]"
 	headshot_label.position = startingLabelPos
 	headshot_label.modulate.a = 1.0
@@ -76,7 +79,8 @@ func onStyleKill(label: String = "STYLE KILL!"):
 	tween.finished.connect(func():
 		headshot_label.visible = false
 		ScoreManager.styleKills += 1
-		die())
+		ScoreManager.registerKill()
+		queue_free())
 
 func flashRed():
 	modulate = Color.RED
