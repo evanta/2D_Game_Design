@@ -16,12 +16,22 @@ var slotOffset = 45.0
 @onready var camera_2d: Camera2D = $Camera2D
 @export var cameraZoom : float = 1.1
 
+@export var isdead = false
+var downsmash = false
+var is_rolling = false
+
 func _ready() -> void:
 	add_to_group("player")
 	lastSafePosition = global_position
 	camera_2d.zoom = Vector2(cameraZoom, cameraZoom)
+	anim.animation_finished.connect(_on_animation_finished)  # ADD THIS
+
 
 func _physics_process(delta):
+	#check if the player is dead 
+	if isdead == true: 
+		return
+	
 	# Gravity
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -39,19 +49,27 @@ func _physics_process(delta):
 		dir = -1
 		
 	#down movement
-	if Input.is_action_just_pressed("moveDown") and (velocity.y > -200 and velocity.y < 200): 
+	if Input.is_action_just_pressed("moveDown") and (velocity.y > -200 and velocity.y < 200)and not is_on_floor(): 
 		velocity.y = jumpForce * 2 
+		downsmash = true
 
 	velocity.x = dir * speed
 
 	# Animation
-	if dir != 0:
+	if is_rolling:
+		pass
+	elif dir != 0:
 		anim.flip_h = (dir < 0)
 		if anim.animation != "run":
 			anim.play("run")
 	else:
 		if anim.animation != "idle":
 			anim.play("idle")
+	
+	if downsmash: 
+		is_rolling = true
+		downsmash = false
+		anim.play("roll")
 
 	if dir != 0:
 		anim.flip_h = (dir < 0)
@@ -65,6 +83,10 @@ func _physics_process(delta):
 			safePositionTimer = 0.0
 	move_and_slide()
 
+func _on_animation_finished():
+	if anim.animation == "roll": 
+		is_rolling = false
+
 func equipWeapon(weaponScene: PackedScene):
 	print("equipWeapon called with: ", weaponScene)
 	for child in weaponSlot.get_children():
@@ -77,22 +99,32 @@ func equipWeapon(weaponScene: PackedScene):
 	weapon.setup(self)
 
 func flashRed():
+	if isdead:
+		return
 	modulate = Color.RED
 	await get_tree().create_timer(0.15).timeout
-	modulate = Color.WHITE
+	if not isdead: 
+		modulate = Color.WHITE
 
 func takeDamage(amount: float):
+	if isdead: 
+		return
 	currentHealth -= amount
 	flashRed()
 	if currentHealth <= 0:
-		var tween = create_tween()
-		tween.set_parallel()
-		tween.tween_property(self, ^"self_modulate", Color.DARK_RED, 1.0 )
-		tween.tween_property(self, ^"modulate", 0.5, 1.0)
-		tween.finished.connect(die)
+		isdead = true
+		die()
+
 func die():
-	get_tree().reload_current_scene()
+	modulate = Color.WHITE
+	anim.play("death")
+	var tween = create_tween()
+	tween.tween_property(self, ^"self_modulate", Color.DARK_RED, 0.3)
+	var tree = get_tree()
+	await anim.animation_finished
 	ScoreManager.resetLevel()
+	get_tree().reload_current_scene()
+	
 
 func fallRespawn():
 	takeDamage(25.0)
