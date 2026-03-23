@@ -10,7 +10,6 @@ Label/font_sizes/font_size = 22
 
 [node name="ScoreScene" type="CanvasLayer" unique_id=2113728801]
 script = ExtResource("1_x0ndm")
-currentLevelScene = null
 
 [node name="Control" type="Control" parent="." unique_id=187260779]
 layout_mode = 3

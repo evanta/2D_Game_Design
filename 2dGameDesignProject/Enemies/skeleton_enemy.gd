@@ -1,35 +1,26 @@
 extends CharacterBody2D
-
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
-
 const SPEED = 300.0
-
 @export var health: float = 100.0
 @export var speed: float = 50.0
 @export var gravity: float = 900.0
 @export var damage : float = 20.0
-
-
-
 var direction = 1
-
 # walking cycle variables
-@export var max_walk_distance = 50 
-var start = 0 
+@export var max_walk_distance = 50
+var start = 0
 var traveled_distance = 0
 @onready var headshot: Area2D = $Headshot
-
 var knockbackVelocity = Vector2.ZERO
 @onready var hitbox: Area2D = %Hitbox
 @onready var headshot_label: RichTextLabel = $HeadshotLabel
 var startingLabelPos : Vector2
-
 var collisionBoxes : Array = [ $PhysicsCollision, $Hitbox/HitboxShape, $Headshot/HeadshotShape]
 @onready var physics_collision: CollisionShape2D = $PhysicsCollision
 
 func _ready():
 	headshot_label.visible = false
-	startingLabelPos =   headshot_label.position
+	startingLabelPos = headshot_label.position
 	add_to_group("enemy")
 	hitbox.body_entered.connect(onBodyEntered)
 
@@ -37,9 +28,7 @@ func onBodyEntered(body):
 	if body.has_method("takeDamage"):
 		body.takeDamage(damage)
 
-
 func _physics_process(delta: float) -> void:
-	
 	anim.play("Walking")
 	
 	if not is_on_floor():
@@ -66,14 +55,15 @@ func takeDamage(amount: float):
 	print("Enemy took ", amount, " damage! Health: ", health)
 	flashRed()
 	if health <= 0:
-		physics_collision.set_deferred("disabled", true) 
+		physics_collision.set_deferred("disabled", true)
 		die()
 
-func onHeadshot():
+func onStyleKill(label: String = "STYLE KILL!"):
 	set_physics_process(false)
 	for shape in collisionBoxes:
 		if shape is CollisionShape2D:
 			shape.disabled = true
+	headshot_label.text = "[center]" + label + "[/center]"
 	headshot_label.position = startingLabelPos
 	headshot_label.modulate.a = 1.0
 	headshot_label.visible = true
@@ -83,9 +73,9 @@ func onHeadshot():
 	tween.tween_property(headshot_label, ^"modulate:a", 0.0, 0.5)
 	flashRed()
 	flashRed()
-	tween.finished.connect(func(): 
+	tween.finished.connect(func():
 		headshot_label.visible = false
-		ScoreManager.headshots += 1
+		ScoreManager.styleKills += 1
 		die())
 
 func flashRed():

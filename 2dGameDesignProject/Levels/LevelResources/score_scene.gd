@@ -1,21 +1,19 @@
 extends CanvasLayer
-
 @onready var titleLabel: Label = $Control/PanelContainer/VBoxContainer/TitleLable
 @onready var enemiesLabel: Label = $Control/PanelContainer/VBoxContainer/EnemiesLabel
 @onready var timeLabel: Label = $Control/PanelContainer/VBoxContainer/TimeLabel
 @onready var healthLabel: Label = $Control/PanelContainer/VBoxContainer/HealthLabel
 @onready var totalLabel: Label = $Control/PanelContainer/VBoxContainer/TotalLabel
 @onready var restartButton: Button = $Control/PanelContainer/VBoxContainer/HBoxContainer/RestartButton
-@onready var headshots_label: Label = $Control/PanelContainer/VBoxContainer/HeadshotsLabel
+@onready var styleKillsLabel: Label = $Control/PanelContainer/VBoxContainer/HeadshotsLabel
 @onready var gradeLabel: Label = $Control/PanelContainer/VBoxContainer/GradeLabel
-
 @export var currentLevelScene: String = ""
 
 func _ready():
 	visible = false
-	process_mode = Node.PROCESS_MODE_ALWAYS 
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	restartButton.pressed.connect(_onRestartPressed)
-	headshots_label.visible = false
+	styleKillsLabel.visible = false
 	gradeLabel.visible = false
 
 func displayScore(scoreData: Dictionary):
@@ -27,10 +25,10 @@ func displayScore(scoreData: Dictionary):
 	
 	var labels = [titleLabel, enemiesLabel, timeLabel, healthLabel]
 	
-	if scoreData.headshots > 0:
-		headshots_label.text = "Headshots: " + str(scoreData.headshots) + " = " + str(snapped(scoreData.headshotScore, 0.1)) + " pts"
-		headshots_label.visible = true
-		labels.append(headshots_label)
+	if scoreData.styleKills > 0:
+		styleKillsLabel.text = "Style Kills: " + str(scoreData.styleKills) + " = " + str(snapped(scoreData.styleKillScore, 0.1)) + " pts"
+		styleKillsLabel.visible = true
+		labels.append(styleKillsLabel)
 	
 	labels.append(totalLabel)
 	
@@ -51,7 +49,7 @@ func displayScore(scoreData: Dictionary):
 
 func colorGrade(grade : String):
 	match grade:
-		"S": 
+		"S":
 			var colorTween = create_tween().set_loops()
 			colorTween.tween_method(func(h): gradeLabel.modulate = Color.from_hsv(h, 1.0, 1.0), 0.0, 1.0, 2.0)
 		"A": gradeLabel.modulate = Color.GREEN

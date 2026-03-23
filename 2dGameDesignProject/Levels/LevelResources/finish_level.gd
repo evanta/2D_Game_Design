@@ -1,16 +1,12 @@
-#finish level
 extends Area2D
-
-@export var maxTime: float = 120.0  
-@export var maxEnemies: int = 10     
-@export var maxHealth: float = 100.0 
-
+@export var maxTime: float = 120.0
+@export var maxEnemies: int = 10
+@export var maxHealth: float = 100.0
 @export_group("Score Mulitpliers")
 @export var timeMult : float = 1580
 @export var healthMult : float = 740
 @export var enemyMult : float = 680
-@export var headshotMult : float = 800
-
+@export var styleKillMult : float = 800
 @export_group("Grade Thresholds")
 @export var sMinScore : float = 3500
 @export var aMinScore : float = 2800
@@ -21,7 +17,6 @@ extends Area2D
 func _ready():
 	maxEnemies = get_tree().get_nodes_in_group("enemy").size()
 	body_entered.connect(_onBodyEntered)
-	
 
 func _onBodyEntered(body):
 	if body.is_in_group("player"):
@@ -47,7 +42,6 @@ func getGrade(score : float) -> String:
 	else:
 		return "F"
 
-
 func calculateScore(player) -> Dictionary:
 	var enemiesKilled = ScoreManager.enemiesKilled
 	var timeTaken = ScoreManager.levelTime
@@ -55,7 +49,7 @@ func calculateScore(player) -> Dictionary:
 	var enemyRatio = clampf(float(enemiesKilled) / maxEnemies, 0.0, 1.0)
 	var timeRatio = clampf(1.0 - (timeTaken / maxTime), 0.0, 1.0)
 	var healthRatio = clampf(currentHealth / maxHealth, 0.0, 1.0)
-	var finalScore = (enemyRatio * enemyMult) + (timeRatio * timeMult) + (healthRatio * healthMult) + (ScoreManager.headshots * headshotMult)
+	var finalScore = (enemyRatio * enemyMult) + (timeRatio * timeMult) + (healthRatio * healthMult) + (ScoreManager.styleKills * styleKillMult)
 	return {
 		"enemiesKilled": enemiesKilled,
 		"totalEnemies": maxEnemies,
@@ -66,7 +60,7 @@ func calculateScore(player) -> Dictionary:
 		"enemyScore": enemyRatio * enemyMult,
 		"timeScore": timeRatio * timeMult,
 		"healthScore": healthRatio * healthMult,
-		"headshots": ScoreManager.headshots,
-		"headshotScore": ScoreManager.headshots * headshotMult,
+		"styleKills": ScoreManager.styleKills,
+		"styleKillScore": ScoreManager.styleKills * styleKillMult,
 		"finalScore": finalScore
 	}

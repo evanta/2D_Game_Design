@@ -135,14 +135,17 @@ func die():
 	ScoreManager.resetLevel()
 	get_tree().reload_current_scene()
 	
-func pogo():
-	velocity.y = -pogoForce
+func pogo(force: float = -1.0):
+	if force < 0:
+		force = pogoForce
+	velocity.y = -force
 	downsmash = false
+	is_rolling = true
 	anim.speed_scale = 0.7
 	anim.play("roll")
 	var weapon = weaponSlot.get_child(0)
 	if weapon and weapon.has_method("stopDownAttack"):
-		weapon.stopDownAttack()
+		weapon.stopDownAttack() 
 
 
 func fallRespawn():

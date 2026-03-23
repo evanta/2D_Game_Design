@@ -1,13 +1,9 @@
-# Score manager 
-
 extends Node
-
 var enemiesKilled: int = 0
 var levelTime: float = 0.0
 var tracking: bool = false
 var scoreScreen: PackedScene = preload("res://Levels/LevelResources/ScoreScene.tscn")
-var headshots: int = 0
-
+var styleKills: int = 0
 var previousScores : Dictionary = {}  ## levelPath : last score
 var bestScores : Dictionary = {}      ## levelPath : best score
 var currentLevel : String = ""
@@ -23,12 +19,11 @@ func resetLevel():
 	enemiesKilled = 0
 	levelTime = 0.0
 	tracking = true
-	headshots = 0
+	styleKills = 0
 
 func registerKill():
 	enemiesKilled += 1
 	print("something just used me")
-
 
 func showScore(scoreData: Dictionary):
 	var screen = scoreScreen.instantiate()
