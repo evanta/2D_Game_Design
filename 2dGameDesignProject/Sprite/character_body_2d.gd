@@ -17,6 +17,9 @@ var slotOffset = 45.0
 @export var cameraZoom : float = 1.1
 
 @export var isdead = false
+
+@export var pogoForce: float = 250.0
+
 var downsmash = false
 var is_rolling = false
 
@@ -52,6 +55,9 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("moveDown") and (velocity.y > -200 and velocity.y < 200)and not is_on_floor(): 
 		velocity.y = jumpForce * 2 
 		downsmash = true
+		var weapon = weaponSlot.get_child(0)
+		if weapon and weapon.has_method("startDownAttack"):
+			weapon.startDownAttack()
 
 	velocity.x = dir * speed
 
@@ -68,7 +74,6 @@ func _physics_process(delta):
 	
 	if downsmash: 
 		is_rolling = true
-		downsmash = false
 		anim.play("roll")
 
 	if dir != 0:
@@ -78,6 +83,10 @@ func _physics_process(delta):
 		
 	if is_on_floor():
 		safePositionTimer += delta
+		downsmash = false
+		var weapon = weaponSlot.get_child(0)
+		if weapon and weapon.has_method("stopDownAttack"):
+			weapon.stopDownAttack()
 		if safePositionTimer >= 2.0:
 			lastSafePosition = global_position
 			safePositionTimer = 0.0
@@ -86,6 +95,7 @@ func _physics_process(delta):
 func _on_animation_finished():
 	if anim.animation == "roll": 
 		is_rolling = false
+		anim.speed_scale = 1.0
 
 func equipWeapon(weaponScene: PackedScene):
 	print("equipWeapon called with: ", weaponScene)
@@ -125,6 +135,15 @@ func die():
 	ScoreManager.resetLevel()
 	get_tree().reload_current_scene()
 	
+func pogo():
+	velocity.y = -pogoForce
+	downsmash = false
+	anim.speed_scale = 0.7
+	anim.play("roll")
+	var weapon = weaponSlot.get_child(0)
+	if weapon and weapon.has_method("stopDownAttack"):
+		weapon.stopDownAttack()
+
 
 func fallRespawn():
 	takeDamage(25.0)

@@ -28,6 +28,11 @@ func setAttackStatus ():
 	await get_tree().create_timer(attackSpeed).timeout
 	canAttack = true
 
+func startDownAttack():
+	pass
+
+func stopDownAttack():
+	pass
 
 func performAttack ():
 	pass
