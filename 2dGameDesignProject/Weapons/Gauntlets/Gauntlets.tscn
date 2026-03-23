@@ -12,7 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://bul6bn2ok7464" path="res://Assets/Sounds/punches/Untitled 5-storegraphic-punch-493595.wav" id="10_jffw0"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_7noum"]
-random_pitch = 1.075743
+random_pitch = 1.4246261
 streams_count = 6
 stream_0/stream = ExtResource("5_s2xjb")
 stream_1/stream = ExtResource("6_m0qut")

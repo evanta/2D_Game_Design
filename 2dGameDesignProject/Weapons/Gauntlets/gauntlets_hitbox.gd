@@ -7,9 +7,11 @@ extends Area2D
 @onready var right_sprite: Sprite2D = %RightSprite
 
 var damage : float = 0.0
+var knockForce : float = 400.0
 
-func setup(dmg : float, base_range : float, current_range : float, isLeft : bool):
+func setup(dmg : float, base_range : float, current_range : float, isLeft : bool, knockback : float):
 	damage = dmg
+	knockForce = knockback
 	var collision_shape = $CollisionShape2D
 	if current_range > base_range:
 		var scale_factor = current_range / base_range
@@ -34,4 +36,4 @@ func onBodyEntered(body):
 		body.takeDamage(damage)
 	if body.has_method("applyKnockback"):
 		var knockDir = (body.global_position - global_position).normalized()
-		body.applyKnockback(knockDir, 550.0)
+		body.applyKnockback(knockDir, knockForce)

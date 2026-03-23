@@ -6,7 +6,6 @@ var baseRange : float
 var isLeftPunch : bool = true
 @onready var left_gloves: Sprite2D = %LeftGloves
 @onready var right_gloves: Sprite2D = %RightGloves
-
 func _ready():
 	baseRange = attackRange
 
