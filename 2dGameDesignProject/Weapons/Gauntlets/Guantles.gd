@@ -15,7 +15,8 @@ func performAttack():
 	var hitbox = hitbox_scene.instantiate()
 	isLeftPunch = !isLeftPunch
 	add_child(hitbox)
-	hitbox.setup(damage, baseRange, attackRange, isLeftPunch)
+	var knockForce = character.gauntletKnockbackForce
+	hitbox.setup(damage, baseRange, attackRange, isLeftPunch, knockForce)
 	left_gloves.visible = false
 	right_gloves.visible = false
 	await get_tree().create_timer(attackSpeed).timeout

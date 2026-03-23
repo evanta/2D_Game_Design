@@ -34,4 +34,4 @@ func onBodyEntered(body):
 		body.takeDamage(damage)
 	if body.has_method("applyKnockback"):
 		var knockDir = (body.global_position - global_position).normalized()
-		body.applyKnockback(knockDir, 350.0)
+		body.applyKnockback(knockDir, 550.0)

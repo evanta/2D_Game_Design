@@ -7,7 +7,7 @@ const SPEED = 300.0
 @export var damage : float = 20.0
 var direction = 1
 # walking cycle variables
-@export var max_walk_distance = 50
+@export var max_walk_distance := 50.0
 var start = 0
 var traveled_distance = 0
 @onready var headshot: Area2D = $Headshot
@@ -17,7 +17,7 @@ var knockbackVelocity = Vector2.ZERO
 var startingLabelPos : Vector2
 var collisionBoxes : Array = [ $PhysicsCollision, $Hitbox/HitboxShape, $Headshot/HeadshotShape]
 @onready var physics_collision: CollisionShape2D = $PhysicsCollision
-
+var isKnockedBack : bool = false
 func _ready():
 	headshot_label.visible = false
 	startingLabelPos = headshot_label.position
@@ -25,8 +25,13 @@ func _ready():
 	hitbox.body_entered.connect(onBodyEntered)
 
 func onBodyEntered(body):
+	print("Hit: ", body.name, " | isKnockedBack: ", isKnockedBack, " | inGroup: ", body.is_in_group("enemy"))
 	if body.has_method("takeDamage"):
-		body.takeDamage(damage)
+		if body is Player:
+			body.takeDamage(damage)
+		elif body.is_in_group("enemy") and isKnockedBack:
+			body.onStyleKill("FRIENDLY FIRE!")
+			die()
 
 func _physics_process(delta: float) -> void:
 	anim.play("Walking")
@@ -39,6 +44,10 @@ func _physics_process(delta: float) -> void:
 	
 	# decay knockback over time
 	knockbackVelocity = knockbackVelocity.move_toward(Vector2.ZERO, 500 * delta)
+	if knockbackVelocity.length() < 5.0:
+		if isKnockedBack:
+			print("Knockback ended, velocity was: ", knockbackVelocity.length())
+		isKnockedBack = false
 	
 	traveled_distance += abs(speed * direction * delta)
 	
@@ -49,6 +58,7 @@ func _physics_process(delta: float) -> void:
 
 func applyKnockback(dir: Vector2, force: float):
 	knockbackVelocity = dir.normalized() * force
+	isKnockedBack = true
 
 func takeDamage(amount: float):
 	health -= amount
@@ -72,8 +82,8 @@ func onStyleKill(label: String = "STYLE KILL!"):
 	headshot_label.visible = true
 	
 	var tween = create_tween().set_parallel().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
-	tween.tween_property(headshot_label, ^"position", startingLabelPos + Vector2(2.0, -4.0), 0.8)
-	tween.tween_property(headshot_label, ^"modulate:a", 0.0, 0.8)
+	tween.tween_property(headshot_label, ^"position", startingLabelPos + Vector2(2.0, -4.0), 1.4)
+	tween.tween_property(headshot_label, ^"modulate:a", 0.0, 1.4)
 	flashRed()
 	flashRed()
 	tween.finished.connect(func():

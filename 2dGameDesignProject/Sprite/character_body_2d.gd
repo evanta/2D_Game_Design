@@ -19,6 +19,7 @@ var slotOffset = 45.0
 @export var isdead = false
 
 @export var pogoForce: float = 250.0
+@export var gauntletKnockbackForce := 450
 
 var downsmash = false
 var is_rolling = false
