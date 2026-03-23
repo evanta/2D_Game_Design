@@ -2,7 +2,8 @@ extends Area2D
 @onready var collision_shape_2d: CollisionShape2D = %CollisionShape2D
 var damage : float = 0.0
 var persistent: bool = false
-@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
+@onready var bonk_2: AudioStreamPlayer2D = $Bonk2
+@onready var bonk_1: AudioStreamPlayer2D = $Bonk1
 
 func _ready():
 	var swordPNG = get_parent().get_node("SwordPNG")
@@ -28,7 +29,7 @@ func onBodyEntered(body):
 		if isStyleKill:
 			body.health -= damage
 			body.flashRed()
-			audio_stream_player_2d.play(1.1)
+			bonk_2.play(0.5)
 			body.onStyleKill("BONK!")
 			
 		else:
