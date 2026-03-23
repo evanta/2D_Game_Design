@@ -28,7 +28,7 @@ func onBodyEntered(body):
 		if willKill and body.has_method("onStyleKill"):
 			var player = get_tree().get_first_node_in_group("player")
 			if player and player.downsmash:
-				body.onStyleKill("POGO KILL!")
+				body.onStyleKill("BONK!")
 		if body.has_method("applyKnockback"):
 			var knockDir = (body.global_position - global_position).normalized()
 			body.applyKnockback(knockDir, 200.0)

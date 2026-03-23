@@ -69,8 +69,8 @@ func onStyleKill(label: String = "STYLE KILL!"):
 	headshot_label.visible = true
 	
 	var tween = create_tween().set_parallel().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
-	tween.tween_property(headshot_label, ^"position", startingLabelPos + Vector2(2.0, -4.0), 0.5)
-	tween.tween_property(headshot_label, ^"modulate:a", 0.0, 0.5)
+	tween.tween_property(headshot_label, ^"position", startingLabelPos + Vector2(2.0, -4.0), 0.8)
+	tween.tween_property(headshot_label, ^"modulate:a", 0.0, 0.8)
 	flashRed()
 	flashRed()
 	tween.finished.connect(func():
