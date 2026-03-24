@@ -15,6 +15,7 @@ var levelPaths : Dictionary = {
 	],
 	"Gauntlets": [
 		"res://Levels/GauntletsLevels/GauntletLevel1.tscn",
+		"res://Levels/GauntletsLevels/GauntletLevel2.tscn",
 	],
 }
 
