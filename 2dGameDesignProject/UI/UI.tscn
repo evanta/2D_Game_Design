@@ -25,7 +25,7 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 0.171
-offset_right = -843.0
+offset_right = -597.0
 offset_bottom = -45.808
 
 [node name="ProgressBar" type="ProgressBar" parent="Control/HBoxContainer" unique_id=693428286]

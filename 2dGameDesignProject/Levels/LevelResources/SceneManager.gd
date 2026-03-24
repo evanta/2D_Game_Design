@@ -17,7 +17,7 @@ var levelPaths : Dictionary = {
 	"Gauntlets": [
 		"res://Levels/GauntletsLevels/GauntletLevel1.tscn",
 		"res://Levels/GauntletsLevels/GauntletLevel2.tscn",
-	],
+	]
 }
 
 
@@ -62,9 +62,28 @@ func goToNextLevel(currentLevelPath : String) -> void:
 		get_tree().change_scene_to_file(nextLevel)
 	else:
 		get_tree().paused = false
-		get_tree().change_scene_to_file("res://UI/MainMenu.tscn")
+		if areAllLevelsCompleted():
+			get_tree().change_scene_to_file("res://UI/FinalTranscript.tscn")
+		else:
+			get_tree().change_scene_to_file("res://UI/MainMenu.tscn")
 
 func goToMainMenu() -> void:
 	ScoreManager.resetLevel()
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://UI/MainMenu.tscn")
+
+
+## Add to SceneManager.gd
+
+func areAllLevelsCompleted() -> bool:
+	for weapon : String in levelPaths:
+		for levelPath : String in levelPaths[weapon]:
+			if not ScoreManager.bestScores.has(levelPath):
+				return false
+	return true
+
+func getTotalLevelCount() -> int:
+	var count : int = 0
+	for weapon : String in levelPaths:
+		count += levelPaths[weapon].size()
+	return count

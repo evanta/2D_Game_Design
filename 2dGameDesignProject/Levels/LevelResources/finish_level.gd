@@ -25,7 +25,7 @@ func _onBodyEntered(body):
 		score["grade"] = grade
 		get_tree().paused = true
 		var levelPath = get_tree().current_scene.scene_file_path
-		ScoreManager.saveScore(levelPath, score.finalScore)
+		ScoreManager.saveScore(levelPath, score.finalScore, score.grade)
 		ScoreManager.showScore(score)
 		if SceneManager.canAdvance(grade):
 			SceneManager.unlockNextLevel(levelPath)

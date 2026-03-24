@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bilgph55b35oa"]
+
+[ext_resource type="Script" uid="uid://bltkkkim7dmmr" path="res://Levels/SwordLevels/ladder_zone.gd" id="1_0ttwi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ei7wn"]
+size = Vector2(110, 516)
+
+[node name="LadderZone" type="Area2D" unique_id=1767843559]
+script = ExtResource("1_0ttwi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2091677435]
+position = Vector2(341, 274)
+shape = SubResource("RectangleShape2D_ei7wn")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1316146406]
+offset_left = 282.0
+offset_top = 42.0
+offset_right = 404.0
+offset_bottom = 522.0
+color = Color(0.19973177, 0.19973174, 0.19973174, 0.34901962)
+
+[node name="Label" type="Label" parent="." unique_id=325462584]
+unique_name_in_owner = true
+offset_left = 247.0
+offset_top = 346.0
+offset_right = 470.0
+offset_bottom = 404.0
+theme_override_constants/outline_size = 4
+text = "Press and Hold up to ascend "

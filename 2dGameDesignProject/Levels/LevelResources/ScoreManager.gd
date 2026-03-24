@@ -8,6 +8,7 @@ var previousScores : Dictionary = {}  ## levelPath : last score
 var bestScores : Dictionary = {}      ## levelPath : best score
 var currentLevel : String = ""
 
+var bestGrades : Dictionary = {} ## levelPath : grade letter
 func _ready():
 	resetLevel()
 
@@ -31,10 +32,12 @@ func showScore(scoreData: Dictionary):
 	screen.currentLevelScene = get_tree().current_scene.scene_file_path
 	screen.displayScore(scoreData)
 
-func saveScore(levelPath : String, score : float):
+
+func saveScore(levelPath : String, score : float, grade : String):
 	previousScores[levelPath] = score
 	if not bestScores.has(levelPath) or score > bestScores[levelPath]:
 		bestScores[levelPath] = score
+		bestGrades[levelPath] = grade
 
 func getPreviousScore(levelPath : String) -> float:
 	if previousScores.has(levelPath):
@@ -45,3 +48,8 @@ func getBestScore(levelPath : String) -> float:
 	if bestScores.has(levelPath):
 		return bestScores[levelPath]
 	return 0.0
+
+func getBestGrade(levelPath : String) -> String:
+	if bestGrades.has(levelPath):
+		return bestGrades[levelPath]
+	return ""
