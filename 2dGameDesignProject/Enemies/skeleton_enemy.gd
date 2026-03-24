@@ -30,6 +30,7 @@ func onBodyEntered(body):
 		if body is Player:
 			body.takeDamage(damage)
 		elif body.is_in_group("enemy") and isKnockedBack:
+			disableAllCollsion()
 			body.onStyleKill("FRIENDLY FIRE!")
 			die()
 
@@ -72,9 +73,7 @@ func takeDamage(amount: float):
 func onStyleKill(label: String = "STYLE KILL!"):
 	set_physics_process(false)
 	physics_collision.set_deferred("disabled", true)
-	for shape in collisionBoxes:
-		if shape is CollisionShape2D:
-			shape.set_deferred("disabled", true)
+	disableAllCollsion()
 	anim.play("Death")
 	headshot_label.text = "[center]" + label + "[/center]"
 	headshot_label.position = startingLabelPos
@@ -98,16 +97,21 @@ func flashRed():
 	modulate = Color.WHITE
 
 func die():
-	anim.play("Death")
-	
-	# Make it stop walking
 	set_physics_process(false)
 	
 	# Disable collisions
-	$Hitbox/HitboxShape.set_deferred("disabled", true)
-	$Headshot/HeadshotShape.set_deferred("disabled", true)
+	disableAllCollsion()
+	anim.play("Death")
+	
+	# Make it stop walking
 	
 	# Remove it from the level
 	await anim.animation_finished
 	queue_free()
 	ScoreManager.registerKill()
+
+
+func disableAllCollsion():
+	physics_collision.set_deferred("disabled", true)
+	$Hitbox/HitboxShape.set_deferred("disabled", true)
+	$Headshot/HeadshotShape.set_deferred("disabled", true)

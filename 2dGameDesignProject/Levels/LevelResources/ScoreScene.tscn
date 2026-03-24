@@ -1,12 +1,47 @@
 [gd_scene format=3 uid="uid://bm7qwrgod0six"]
 
 [ext_resource type="Script" uid="uid://cvpt1v4og8263" path="res://Levels/LevelResources/score_scene.gd" id="1_x0ndm"]
+[ext_resource type="Theme" uid="uid://b6qathgb67vri" path="res://MainTheme.tres" id="2_4fx2v"]
 
 [sub_resource type="Theme" id="Theme_x0ndm"]
 Label/colors/font_color = Color(1, 1, 1, 1)
 Label/colors/font_outline_color = Color(0, 0, 0, 1)
 Label/constants/outline_size = 2
 Label/font_sizes/font_size = 22
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d0w77"]
+bg_color = Color(0.23137255, 0.23137255, 0.23137255, 0.58431375)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+shadow_size = 6
+
+[sub_resource type="Theme" id="Theme_v1hbw"]
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_d0w77")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4fx2v"]
+bg_color = Color(0.44313726, 0.047058824, 0.1254902, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_njy1c"]
+bg_color = Color(0.23031491, 0.23031494, 0.23031485, 0.58431375)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.20152655, 0.20152661, 0.20152643, 1)
+border_blend = true
+shadow_size = 1
+
+[sub_resource type="Theme" id="Theme_4fx2v"]
+HSeparator/styles/separator = SubResource("StyleBoxFlat_4fx2v")
+Label/colors/font_color = Color(0.82980007, 0.566327, 0.44448546, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/colors/font_shadow_color = Color(0.25384274, 0.25384274, 0.25384274, 0.45882353)
+Label/constants/outline_size = 5
+Label/constants/shadow_outline_size = 2
+Label/font_sizes/font_size = 18
+Label/styles/normal = SubResource("StyleBoxFlat_njy1c")
 
 [node name="ScoreScene" type="CanvasLayer" unique_id=2113728801]
 script = ExtResource("1_x0ndm")
@@ -34,29 +69,36 @@ offset_right = 4.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_v1hbw")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer" unique_id=594034734]
 layout_mode = 2
+theme = SubResource("Theme_4fx2v")
 theme_override_constants/separation = 8
 
 [node name="TitleLable" type="Label" parent="Control/PanelContainer/VBoxContainer" unique_id=1355072515]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
+text = "test"
 
 [node name="HSeparator" type="HSeparator" parent="Control/PanelContainer/VBoxContainer" unique_id=2019217419]
 layout_mode = 2
 
 [node name="EnemiesLabel" type="Label" parent="Control/PanelContainer/VBoxContainer" unique_id=364856698]
 layout_mode = 2
+text = "test"
 
 [node name="TimeLabel" type="Label" parent="Control/PanelContainer/VBoxContainer" unique_id=571414981]
 layout_mode = 2
+text = "test"
 
 [node name="HealthLabel" type="Label" parent="Control/PanelContainer/VBoxContainer" unique_id=564357322]
 layout_mode = 2
+text = "test"
 
 [node name="HeadshotsLabel" type="Label" parent="Control/PanelContainer/VBoxContainer" unique_id=168587433]
 layout_mode = 2
+text = "test"
 
 [node name="HSeparator2" type="HSeparator" parent="Control/PanelContainer/VBoxContainer" unique_id=797555885]
 layout_mode = 2
@@ -64,12 +106,16 @@ layout_mode = 2
 [node name="TotalLabel" type="Label" parent="Control/PanelContainer/VBoxContainer" unique_id=1668342465]
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
+text = "test"
 
 [node name="GradeLabel" type="Label" parent="Control/PanelContainer/VBoxContainer" unique_id=1980341379]
 layout_mode = 2
+text = "test"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/PanelContainer/VBoxContainer" unique_id=554372752]
 layout_mode = 2
+theme = ExtResource("2_4fx2v")
+metadata/_edit_group_ = true
 
 [node name="RestartButton" type="Button" parent="Control/PanelContainer/VBoxContainer/HBoxContainer" unique_id=1208076825]
 layout_mode = 2

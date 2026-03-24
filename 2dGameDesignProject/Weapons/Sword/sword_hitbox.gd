@@ -4,7 +4,6 @@ var damage : float = 0.0
 var persistent: bool = false
 @onready var bonk_2: AudioStreamPlayer2D = $Bonk2
 @onready var bonk_1: AudioStreamPlayer2D = $Bonk1
-
 func _ready():
 	var swordPNG = get_parent().get_node("SwordPNG")
 	body_entered.connect(onBodyEntered)
@@ -41,7 +40,7 @@ func onBodyEntered(body):
 	var player = get_tree().get_first_node_in_group("player")
 	if player and player.downsmash:
 		if body.has_method("takeDamage"):
-			player.pogo(450.0)
+			player.pogo(player.enemyPogoForce)
 			bonk_1.play(1.1)
 		else:
 			player.pogo()

@@ -1,6 +1,6 @@
 extends Area2D
 var damage : float = 0.0
-var speed : float = 500.0
+var speed : float = 900.0
 var direction : float = 1.0
 var lifetime : float = 1.0
 var hasHit = false

@@ -18,8 +18,9 @@ var slotOffset = 45.0
 
 @export var isdead = false
 
-@export var pogoForce: float = 250.0
-@export var gauntletKnockbackForce := 450
+@export var plainPogoForce: float = 200.0
+@export var enemyPogoForce : float = 600.0
+@export var gauntletKnockbackForce := 450.0
 
 var downsmash = false
 var is_rolling = false
@@ -53,7 +54,7 @@ func _physics_process(delta):
 		dir = -1
 		
 	#down movement
-	if Input.is_action_just_pressed("moveDown") and (velocity.y > -200 and velocity.y < 200)and not is_on_floor(): 
+	if Input.is_action_just_pressed("moveDown") and (velocity.y > -200 and velocity.y < 250)and not is_on_floor(): 
 		velocity.y = jumpForce * 2 
 		downsmash = true
 		var weapon = weaponSlot.get_child(0)
@@ -138,7 +139,7 @@ func die():
 	
 func pogo(force: float = -1.0):
 	if force < 0:
-		force = pogoForce
+		force = plainPogoForce
 	velocity.y = -force
 	downsmash = false
 	is_rolling = true
