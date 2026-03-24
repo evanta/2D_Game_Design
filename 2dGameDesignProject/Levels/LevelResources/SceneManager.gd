@@ -8,7 +8,8 @@ var unlockedLevels : Dictionary = {}
 var levelPaths : Dictionary = {
 	"Sword": [
 		"res://Levels/SwordLevels/SwordLevel1.tscn",
-		"res://Levels/SwordLevels/SwordLevel2.tscn"
+		"res://Levels/SwordLevels/SwordLevel2.tscn",
+		"res://Levels/SwordLevels/SwordLevel3.tscn",
 	],
 	"Bow": [
 		"res://Levels/BowLevels/BowLevel1.tscn",
