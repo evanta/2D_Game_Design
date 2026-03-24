@@ -244,7 +244,7 @@ animations = [{
 size = Vector2(10.377, 38.467)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fcdv1"]
-size = Vector2(63.457817, 62.217438)
+size = Vector2(50.45671, 62.217438)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fcdv1"]
 radius = 16.731358
@@ -270,8 +270,8 @@ shape = SubResource("RectangleShape2D_6vt0i")
 unique_name_in_owner = true
 
 [node name="HitboxShape" type="CollisionShape2D" parent="Hitbox" unique_id=1476053682]
-position = Vector2(4.798028, 31.832157)
-scale = Vector2(0.9999994, 0.9999994)
+position = Vector2(-1.7025218, 31.832151)
+scale = Vector2(0.99999934, 0.99999934)
 shape = SubResource("RectangleShape2D_fcdv1")
 
 [node name="Headshot" type="Area2D" parent="." unique_id=128045750]

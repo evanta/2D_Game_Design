@@ -587,7 +587,8 @@ texture = ExtResource("1_ccs4x")
 [node name="ENEMIES" type="Node2D" parent="." unique_id=1888518329]
 
 [node name="Skeleton" parent="ENEMIES" unique_id=1046337729 instance=ExtResource("2_gc7bo")]
-position = Vector2(928, 424)
+position = Vector2(929, 451)
+scale = Vector2(1.325, 1.134)
 
 [node name="LEVEL DESIGN" type="Node2D" parent="." unique_id=151655809]
 

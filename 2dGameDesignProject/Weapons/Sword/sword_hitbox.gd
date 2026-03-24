@@ -42,6 +42,7 @@ func onBodyEntered(body):
 	if player and player.downsmash:
 		if body.has_method("takeDamage"):
 			player.pogo(450.0)
+			bonk_1.play(1.1)
 		else:
 			player.pogo()
 	elif player:
