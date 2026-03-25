@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqvjk1dqstjgt"
-path="res://.godot/imported/GradeC_Screen.png-27cfdc038397252044704c3d027323ea.ctex"
+uid="uid://cthav8tw5g5x1"
+path="res://.godot/imported/GradeD.png-35c8822cfe5addfc00ea9f7e276b03f0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Grade Screens/GradeC_Screen.png"
-dest_files=["res://.godot/imported/GradeC_Screen.png-27cfdc038397252044704c3d027323ea.ctex"]
+source_file="res://Assets/Grade Screens/GradeD.png"
+dest_files=["res://.godot/imported/GradeD.png-35c8822cfe5addfc00ea9f7e276b03f0.ctex"]
 
 [params]
 
