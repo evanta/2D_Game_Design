@@ -36,7 +36,7 @@ shadow_size = 1
 
 [sub_resource type="Theme" id="Theme_4fx2v"]
 HSeparator/styles/separator = SubResource("StyleBoxFlat_4fx2v")
-Label/colors/font_color = Color(0.82980007, 0.566327, 0.44448546, 1)
+Label/colors/font_color = Color(0.8758585, 0.6402144, 0.533895, 1)
 Label/colors/font_outline_color = Color(0, 0, 0, 1)
 Label/colors/font_shadow_color = Color(0.25384274, 0.25384274, 0.25384274, 0.45882353)
 Label/constants/outline_size = 5
@@ -57,6 +57,7 @@ grow_vertical = 2
 theme = SubResource("Theme_x0ndm")
 
 [node name="ColorRect" type="TextureRect" parent="Control" unique_id=1241598520]
+visible = false
 z_index = 2
 layout_mode = 1
 anchors_preset = 15
@@ -86,7 +87,7 @@ grow_vertical = 2
 theme = SubResource("Theme_v1hbw")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer" unique_id=594034734]
-modulate = Color(1, 1, 1, 0.6627451)
+modulate = Color(1, 1, 1, 0.7921569)
 layout_mode = 2
 theme = SubResource("Theme_4fx2v")
 theme_override_constants/separation = 8
