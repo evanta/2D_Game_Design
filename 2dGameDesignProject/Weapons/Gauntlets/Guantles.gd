@@ -11,6 +11,8 @@ func _ready():
 
 
 func performAttack():
+	if character == null:
+		return
 	var hitbox = hitbox_scene.instantiate()
 	isLeftPunch = !isLeftPunch
 	add_child(hitbox)
