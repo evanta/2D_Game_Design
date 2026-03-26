@@ -91,9 +91,10 @@ func colorLabel(label : Label, grade : String):
 		"F": label.modulate = Color.RED
 
 func colorGPA(label : Label, gpa : float):
-	if gpa >= 3.5:
+	if gpa >= 4.0:
 		var colorTween = create_tween().set_loops()
 		colorTween.tween_method(func(h): label.modulate = Color.from_hsv(h, 1.0, 1.0), 0.0, 1.0, 2.0)
+	elif gpa >= 3.5 and gpa < 4.0: label.modulate = Color.DARK_ORCHID
 	elif gpa >= 3.0: label.modulate = Color.GREEN
 	elif gpa >= 2.0: label.modulate = Color.CYAN
 	elif gpa >= 1.0: label.modulate = Color.YELLOW
