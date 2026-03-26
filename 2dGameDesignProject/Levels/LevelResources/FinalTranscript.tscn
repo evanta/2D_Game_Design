@@ -1,12 +1,15 @@
 [gd_scene format=3 uid="uid://d1cejbt63pfwl"]
 
+[ext_resource type="Script" uid="uid://cwnye8ydqfj0l" path="res://Levels/LevelResources/finalTranscript.gd" id="1_22h37"]
+
 [sub_resource type="Theme" id="Theme_x0ndm"]
 Label/colors/font_color = Color(1, 1, 1, 1)
 Label/colors/font_outline_color = Color(0, 0, 0, 1)
 Label/constants/outline_size = 2
 Label/font_sizes/font_size = 22
 
-[node name="FinalScoreScene" type="CanvasLayer" unique_id=2113728801]
+[node name="Endgame" type="CanvasLayer" unique_id=2113728801]
+script = ExtResource("1_22h37")
 
 [node name="Control" type="Control" parent="." unique_id=187260779]
 layout_mode = 3
@@ -25,131 +28,131 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="Control/OverallVBox" unique_id=722677774]
+[node name="TitleLabel" type="Label" parent="Control/OverallVBox" unique_id=722677774]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "FINAL REPORT CARD:"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/OverallVBox" unique_id=2114755265]
+[node name="SwordVbox" type="VBoxContainer" parent="Control/OverallVBox" unique_id=2114755265]
 layout_mode = 2
 size_flags_vertical = 14
 
-[node name="Label" type="Label" parent="Control/OverallVBox/VBoxContainer" unique_id=1927355439]
+[node name="SwordHeader" type="Label" parent="Control/OverallVBox/SwordVbox" unique_id=1927355439]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Sword Levels"
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/OverallVBox/VBoxContainer" unique_id=88819018]
+[node name="SwordHbox" type="HBoxContainer" parent="Control/OverallVBox/SwordVbox" unique_id=88819018]
 layout_mode = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="Control/OverallVBox/VBoxContainer/HBoxContainer" unique_id=705384482]
+[node name="SwordLabel" type="Label" parent="Control/OverallVBox/SwordVbox/SwordHbox" unique_id=705384482]
 layout_mode = 2
 size_flags_horizontal = 2
 theme_override_font_sizes/font_size = 22
 text = "Sword Level 1 grade = B"
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="Control/OverallVBox/VBoxContainer/HBoxContainer" unique_id=579025675]
+[node name="SwordLabel2" type="Label" parent="Control/OverallVBox/SwordVbox/SwordHbox" unique_id=579025675]
 layout_mode = 2
 size_flags_horizontal = 2
 theme_override_font_sizes/font_size = 22
 text = "Swor level 2 score = A"
 horizontal_alignment = 1
 
-[node name="Label3" type="Label" parent="Control/OverallVBox/VBoxContainer/HBoxContainer" unique_id=185697140]
+[node name="SwordLabel3" type="Label" parent="Control/OverallVBox/SwordVbox/SwordHbox" unique_id=185697140]
 layout_mode = 2
 size_flags_horizontal = 2
 theme_override_font_sizes/font_size = 22
 text = "Sword Level 3 score = B"
 horizontal_alignment = 1
 
-[node name="Label4" type="Label" parent="Control/OverallVBox/VBoxContainer/HBoxContainer" unique_id=1476852854]
+[node name="SwordLabel4" type="Label" parent="Control/OverallVBox/SwordVbox/SwordHbox" unique_id=1476852854]
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_font_sizes/font_size = 22
 text = "Sword level 4 score = S"
 horizontal_alignment = 1
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="Control/OverallVBox" unique_id=943568649]
+[node name="BowVbox" type="VBoxContainer" parent="Control/OverallVBox" unique_id=943568649]
 layout_mode = 2
 size_flags_vertical = 14
 
-[node name="Label" type="Label" parent="Control/OverallVBox/VBoxContainer2" unique_id=1136273916]
+[node name="BowHeader" type="Label" parent="Control/OverallVBox/BowVbox" unique_id=1136273916]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Bow Levels"
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/OverallVBox/VBoxContainer2" unique_id=28458967]
+[node name="BowHBox" type="HBoxContainer" parent="Control/OverallVBox/BowVbox" unique_id=28458967]
 layout_mode = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="Control/OverallVBox/VBoxContainer2/HBoxContainer" unique_id=1586246070]
+[node name="BowLabel" type="Label" parent="Control/OverallVBox/BowVbox/BowHBox" unique_id=1586246070]
 layout_mode = 2
 size_flags_horizontal = 2
 theme_override_font_sizes/font_size = 22
 text = "Sword Level 1 grade = B"
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="Control/OverallVBox/VBoxContainer2/HBoxContainer" unique_id=981953186]
+[node name="BowLabel2" type="Label" parent="Control/OverallVBox/BowVbox/BowHBox" unique_id=981953186]
 layout_mode = 2
 size_flags_horizontal = 2
 theme_override_font_sizes/font_size = 22
 text = "Swor level 2 score = A"
 horizontal_alignment = 1
 
-[node name="Label3" type="Label" parent="Control/OverallVBox/VBoxContainer2/HBoxContainer" unique_id=1828102873]
+[node name="BowLabel3" type="Label" parent="Control/OverallVBox/BowVbox/BowHBox" unique_id=1828102873]
 layout_mode = 2
 size_flags_horizontal = 2
 theme_override_font_sizes/font_size = 22
 text = "Sword Level 3 score = B"
 horizontal_alignment = 1
 
-[node name="Label4" type="Label" parent="Control/OverallVBox/VBoxContainer2/HBoxContainer" unique_id=859561296]
+[node name="BowLabel4" type="Label" parent="Control/OverallVBox/BowVbox/BowHBox" unique_id=859561296]
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_font_sizes/font_size = 22
 text = "Sword level 4 score = S"
 horizontal_alignment = 1
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="Control/OverallVBox" unique_id=552539332]
+[node name="GauntletsVBox" type="VBoxContainer" parent="Control/OverallVBox" unique_id=552539332]
 layout_mode = 2
 size_flags_vertical = 14
 
-[node name="Label" type="Label" parent="Control/OverallVBox/VBoxContainer3" unique_id=187781146]
+[node name="GauntletsHeader" type="Label" parent="Control/OverallVBox/GauntletsVBox" unique_id=187781146]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Gauntlets Levels"
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/OverallVBox/VBoxContainer3" unique_id=1674788213]
+[node name="GauntletsHbox" type="HBoxContainer" parent="Control/OverallVBox/GauntletsVBox" unique_id=1674788213]
 layout_mode = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="Control/OverallVBox/VBoxContainer3/HBoxContainer" unique_id=1327814372]
+[node name="GauntLabel" type="Label" parent="Control/OverallVBox/GauntletsVBox/GauntletsHbox" unique_id=1327814372]
 layout_mode = 2
 size_flags_horizontal = 2
 theme_override_font_sizes/font_size = 22
 text = "Sword Level 1 grade = B"
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="Control/OverallVBox/VBoxContainer3/HBoxContainer" unique_id=806688141]
+[node name="GauntLabel2" type="Label" parent="Control/OverallVBox/GauntletsVBox/GauntletsHbox" unique_id=806688141]
 layout_mode = 2
 size_flags_horizontal = 2
 theme_override_font_sizes/font_size = 22
 text = "Swor level 2 score = A"
 horizontal_alignment = 1
 
-[node name="Label3" type="Label" parent="Control/OverallVBox/VBoxContainer3/HBoxContainer" unique_id=751644604]
+[node name="GauntLabel3" type="Label" parent="Control/OverallVBox/GauntletsVBox/GauntletsHbox" unique_id=751644604]
 layout_mode = 2
 size_flags_horizontal = 2
 theme_override_font_sizes/font_size = 22
 text = "Sword Level 3 score = B"
 horizontal_alignment = 1
 
-[node name="Label4" type="Label" parent="Control/OverallVBox/VBoxContainer3/HBoxContainer" unique_id=2042974541]
+[node name="GauntLabel4" type="Label" parent="Control/OverallVBox/GauntletsVBox/GauntletsHbox" unique_id=2042974541]
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_font_sizes/font_size = 22

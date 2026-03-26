@@ -63,14 +63,17 @@ func goToNextLevel(currentLevelPath : String) -> void:
 	else:
 		get_tree().paused = false
 		if areAllLevelsCompleted():
-			get_tree().change_scene_to_file("res://UI/FinalTranscript.tscn")
+			get_tree().change_scene_to_file("res://Levels/LevelResources/FinalTranscript.tscn")
 		else:
 			get_tree().change_scene_to_file("res://UI/MainMenu.tscn")
 
 func goToMainMenu() -> void:
 	ScoreManager.resetLevel()
 	get_tree().paused = false
-	get_tree().change_scene_to_file("res://UI/MainMenu.tscn")
+	if areAllLevelsCompleted():
+		get_tree().change_scene_to_file("res://Levels/LevelResources/FinalTranscript.tscn")
+	else:
+		get_tree().change_scene_to_file("res://UI/MainMenu.tscn")
 
 
 ## Add to SceneManager.gd
