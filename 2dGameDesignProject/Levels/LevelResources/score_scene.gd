@@ -12,7 +12,7 @@ extends CanvasLayer
 @onready var main_menu: Button = $Control/ButtonContainer/MainMenu
 @onready var gradeStamp: TextureRect = $Control/ColorRect
 @onready var button_container: HBoxContainer = $Control/ButtonContainer
-@onready var gotta_geta_b_label: Label = $Control/ButtonContainer/NextLevelButton/GottaGetaBLabel
+@onready var gotta_geta_b_label: Label = $Control/ButtonContainer/GottaGetaBLabel
 
 var gradeImages : Dictionary = {
 	"S": preload("res://Assets/Grade Screens/GradeA.png"),##change to S when finish
@@ -66,12 +66,18 @@ func displayScore(scoreData: Dictionary):
 			next_level_button.disabled = false
 		else:
 			next_level_button.disabled = true
-	if SceneManager.canAdvance(scoreData.grade) and SceneManager.getNextLevel(currentLevelScene) != "":
+	if SceneManager.getNextLevel(currentLevelScene) == "":
+		next_level_button.visible = false
+		gotta_geta_b_label.visible = true
+		var weapon = _getWeaponName()
+		gotta_geta_b_label.text = weapon + " course completed! Return to the main menu"
+	elif SceneManager.canAdvance(scoreData.grade):
 		next_level_button.disabled = false
 		gotta_geta_b_label.visible = false
 	else:
 		next_level_button.disabled = true
 		gotta_geta_b_label.visible = true
+		gotta_geta_b_label.text = "Need a B or higher to advance..."
 	
 	visible = true
 	
@@ -106,7 +112,11 @@ func displayScore(scoreData: Dictionary):
 		button_container.modulate.a = 0.0
 	)
 	tween.tween_property(button_container, "modulate:a", 1.0, 0.5)
-
+func _getWeaponName() -> String:
+	for weapon: String in SceneManager.levelPaths:
+		if currentLevelScene in SceneManager.levelPaths[weapon]:
+			return weapon
+	return ""
 func colorGrade(grade : String):
 	match grade:
 		"S":

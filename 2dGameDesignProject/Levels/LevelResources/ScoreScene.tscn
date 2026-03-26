@@ -158,15 +158,10 @@ layout_mode = 2
 size_flags_horizontal = 10
 text = "Next Level"
 
-[node name="GottaGetaBLabel" type="Label" parent="Control/ButtonContainer/NextLevelButton" unique_id=1908657524]
-visible = false
-layout_mode = 0
-offset_left = 1.0
-offset_top = -10.0
-offset_right = 279.0
-offset_bottom = 21.0
+[node name="GottaGetaBLabel" type="Label" parent="Control/ButtonContainer" unique_id=1908657524]
+layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_y = 7
-theme_override_constants/outline_size = 2
-theme_override_font_sizes/font_size = 15
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 18
 text = "Need at least a B to pass..."
