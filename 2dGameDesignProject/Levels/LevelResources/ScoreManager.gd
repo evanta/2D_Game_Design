@@ -53,3 +53,14 @@ func getBestGrade(levelPath : String) -> String:
 	if bestGrades.has(levelPath):
 		return bestGrades[levelPath]
 	return ""
+
+
+func gradeToGPA(grade : String) -> float:
+	match grade:
+		"S": return 4.2
+		"A": return 4.0
+		"B": return 3.0
+		"C": return 2.0
+		"D": return 1.0
+		"F": return 0.0
+		_: return 0.0

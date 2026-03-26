@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://dpq84ci1wuibt"]
+
+[ext_resource type="Script" uid="uid://f7iojuh20t0o" path="res://UI/instructions.gd" id="1_a7u6c"]
+
+[node name="Instructions" type="CanvasLayer" unique_id=1649616333]
+layer = 3
+script = ExtResource("1_a7u6c")
+
+[node name="Control" type="Control" parent="." unique_id=1064213428]
+layout_mode = 3
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_right = -1152.0
+grow_vertical = 2
+size_flags_horizontal = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=1856876126]
+layout_mode = 0
+offset_left = 128.0
+offset_top = -230.0
+offset_right = 293.0
+offset_bottom = -84.0
+
+[node name="MovementLabel" type="Label" parent="Control/VBoxContainer" unique_id=67001874]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 24
+text = "Use A and D
+W to jump 
+S to roll down "
+
+[node name="InstructionsLabel" type="Label" parent="Control/VBoxContainer" unique_id=843900067]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 24
+text = "TESTING"

@@ -14,7 +14,7 @@ extends CanvasLayer
 @onready var button_container: HBoxContainer = $Control/ButtonContainer
 
 var gradeImages : Dictionary = {
-	#"S": preload("res://path/to/grade_s.png"),
+	"S": preload("res://Assets/Grade Screens/GradeA.png"),##change to S when finish
 	"A": preload("res://Assets/Grade Screens/GradeA.png"),
 	"B": preload("res://Assets/Grade Screens/GradeB.png"),
 	"C": preload("res://Assets/Grade Screens/GradeC.png"),

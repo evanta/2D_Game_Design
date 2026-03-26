@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://cs6vkm0dlmw0k"]
 
 [ext_resource type="Texture2D" uid="uid://vf8nfm2nxewd" path="res://Assets/Legacy-Fantasy - High Forest 2.3/Background/Background.png" id="1_3cean"]
+[ext_resource type="PackedScene" uid="uid://dpq84ci1wuibt" path="res://UI/Instructions.tscn" id="1_pihtk"]
 [ext_resource type="Texture2D" uid="uid://b2uaxiig5taa8" path="res://Assets/Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="2_f8qf2"]
 [ext_resource type="PackedScene" uid="uid://dbq2vts66xtpi" path="res://Sprite/Character.tscn" id="3_3ruk6"]
 [ext_resource type="PackedScene" uid="uid://dwrk1nabq0y3g" path="res://Weapons/WeaponPickUp.tscn" id="4_xyq0l"]
@@ -513,6 +514,8 @@ stereo = true
 size = Vector2(34784, 621)
 
 [node name="TestSword" type="Node2D" unique_id=1196810243]
+
+[node name="Instructions" parent="." unique_id=1649616333 instance=ExtResource("1_pihtk")]
 
 [node name="Background" type="Sprite2D" parent="." unique_id=450930428]
 modulate = Color(1, 0.9607843, 0.9607843, 1)
