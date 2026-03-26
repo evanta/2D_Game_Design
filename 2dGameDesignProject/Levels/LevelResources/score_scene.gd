@@ -12,6 +12,7 @@ extends CanvasLayer
 @onready var main_menu: Button = $Control/ButtonContainer/MainMenu
 @onready var gradeStamp: TextureRect = $Control/ColorRect
 @onready var button_container: HBoxContainer = $Control/ButtonContainer
+@onready var gotta_geta_b_label: Label = $Control/ButtonContainer/NextLevelButton/GottaGetaBLabel
 
 var gradeImages : Dictionary = {
 	"S": preload("res://Assets/Grade Screens/GradeA.png"),##change to S when finish
@@ -35,6 +36,7 @@ func _ready():
 	main_menu.pressed.connect(_onMainMenuPressed)
 	gradeStamp.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	gradeStamp.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
+	gotta_geta_b_label.visible = false
 
 
 func displayScore(scoreData: Dictionary):
@@ -64,6 +66,12 @@ func displayScore(scoreData: Dictionary):
 			next_level_button.disabled = false
 		else:
 			next_level_button.disabled = true
+	if SceneManager.canAdvance(scoreData.grade) and SceneManager.getNextLevel(currentLevelScene) != "":
+		next_level_button.disabled = false
+		gotta_geta_b_label.visible = false
+	else:
+		next_level_button.disabled = true
+		gotta_geta_b_label.visible = true
 	
 	visible = true
 	
