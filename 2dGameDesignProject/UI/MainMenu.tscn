@@ -134,3 +134,10 @@ text = "Bow Level 3"
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Bow Level 4"
+
+[node name="Label2" type="Label" parent="VBoxContainer" unique_id=62287806]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 22
+text = "Complete each of the corses with a stasfactory grade in order to complete your courses. "

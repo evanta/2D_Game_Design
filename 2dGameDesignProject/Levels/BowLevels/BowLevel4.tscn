@@ -726,7 +726,7 @@ stream = SubResource("AudioStreamWAV_wkt8g")
 
 [node name="FinishLevel" parent="." unique_id=492503270 instance=ExtResource("8_kgks7")]
 position = Vector2(4371, 51)
-sMinScore = 16000.0
+sMinScore = 15000.0
 aMinScore = 14000.0
 bMinScore = 13000.0
 cMinScore = 12000.0
