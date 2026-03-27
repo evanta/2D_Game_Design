@@ -75,6 +75,9 @@ theme_override_font_sizes/font_size = 22
 text = "Sword level 4 score = S"
 horizontal_alignment = 1
 
+[node name="HSeparator" type="HSeparator" parent="Control/OverallVBox/SwordVbox" unique_id=1968186979]
+layout_mode = 2
+
 [node name="BowVbox" type="VBoxContainer" parent="Control/OverallVBox" unique_id=943568649]
 layout_mode = 2
 size_flags_vertical = 14
@@ -117,6 +120,9 @@ theme_override_font_sizes/font_size = 22
 text = "Sword level 4 score = S"
 horizontal_alignment = 1
 
+[node name="HSeparator2" type="HSeparator" parent="Control/OverallVBox/BowVbox" unique_id=2028223983]
+layout_mode = 2
+
 [node name="GauntletsVBox" type="VBoxContainer" parent="Control/OverallVBox" unique_id=552539332]
 layout_mode = 2
 size_flags_vertical = 14
@@ -158,6 +164,9 @@ size_flags_horizontal = 0
 theme_override_font_sizes/font_size = 22
 text = "Sword level 4 score = S"
 horizontal_alignment = 1
+
+[node name="HSeparator3" type="HSeparator" parent="Control/OverallVBox/GauntletsVBox" unique_id=483606557]
+layout_mode = 2
 
 [node name="GPAlabel" type="Label" parent="Control/OverallVBox" unique_id=511648168]
 layout_mode = 2

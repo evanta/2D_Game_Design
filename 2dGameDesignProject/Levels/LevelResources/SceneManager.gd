@@ -4,7 +4,6 @@ extends Node
 var nextLevelMap : Dictionary = {}
 var unlockedLevels : Dictionary = {}
 
-##THESE NEED TO BE UPDATED AND ARE PLACEHOLDER PATHS, UPDATE WHEN NEW LEVELS ARE MADE
 var levelPaths : Dictionary = {
 	"Sword": [
 		"res://Levels/SwordLevels/SwordLevel1.tscn",

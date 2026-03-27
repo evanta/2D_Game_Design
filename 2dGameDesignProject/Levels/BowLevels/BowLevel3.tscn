@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://cnfebx45fk0y0"]
+[gd_scene format=4 uid="uid://dxha563ekbobd"]
 
 [ext_resource type="Texture2D" uid="uid://vf8nfm2nxewd" path="res://Assets/Legacy-Fantasy - High Forest 2.3/Background/Background.png" id="1_x45or"]
 [ext_resource type="PackedScene" uid="uid://ka36vvotev3b" path="res://Enemies/skeleton_enemy.tscn" id="2_rl04c"]
@@ -672,3 +672,8 @@ stream = SubResource("AudioStreamWAV_wkt8g")
 [node name="FinishLevel" parent="." unique_id=492503270 instance=ExtResource("8_31upv")]
 position = Vector2(5011, 770.99994)
 scale = Vector2(0.6310939, 0.6785745)
+sMinScore = 10600.0
+aMinScore = 9800.0
+bMinScore = 9000.0
+cMinScore = 8500.0
+dMinScore = 8000.0

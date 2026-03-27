@@ -244,10 +244,11 @@ animations = [{
 size = Vector2(10.377, 38.467)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fcdv1"]
-size = Vector2(50.45671, 62.217438)
+size = Vector2(50.45671, 54.259407)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_fcdv1"]
-radius = 16.731358
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iqfuw"]
+radius = 16.126877
+height = 47.18791
 
 [node name="Skeleton" type="CharacterBody2D" unique_id=1046337729]
 scale = Vector2(1.6152468, 1.3822494)
@@ -270,16 +271,17 @@ shape = SubResource("RectangleShape2D_6vt0i")
 unique_name_in_owner = true
 
 [node name="HitboxShape" type="CollisionShape2D" parent="Hitbox" unique_id=1476053682]
-position = Vector2(-1.7025218, 31.832151)
-scale = Vector2(0.99999934, 0.99999934)
+position = Vector2(-1.8573014, 34.726006)
+scale = Vector2(0.99999917, 0.99999917)
 shape = SubResource("RectangleShape2D_fcdv1")
 
 [node name="Headshot" type="Area2D" parent="." unique_id=128045750]
 
 [node name="HeadshotShape" type="CollisionShape2D" parent="Headshot" unique_id=1411102221]
 position = Vector2(-1.8573014, -15.916087)
+rotation = 1.5528156
 scale = Vector2(1.4801545, 1.288906)
-shape = SubResource("CircleShape2D_fcdv1")
+shape = SubResource("CapsuleShape2D_iqfuw")
 
 [node name="HeadshotLabel" type="RichTextLabel" parent="." unique_id=1776219559]
 modulate = Color(1, 0.48610443, 0.41860744, 1)

@@ -91,6 +91,7 @@ func displayScore(scoreData: Dictionary):
 	
 	## step 2: Stamp slams down after scores finish
 	if scoreData.has("grade"):
+		tween.tween_interval(1.0)
 		gradeStamp.texture = gradeImages[scoreData.grade] ## dictionary get
 		gradeStamp.pivot_offset = gradeStamp.size / 2
 		gradeStamp.scale = Vector2(3.0, 3.0)
@@ -104,7 +105,7 @@ func displayScore(scoreData: Dictionary):
 		tween.parallel().tween_property(gradeStamp, "modulate:a", 1.0, 0.15)
 		
 		# Small pause to let the stamp land
-		tween.tween_interval(0.3)
+		tween.tween_interval(1.0)
 	
 	## step 3: button fade in on top
 	tween.tween_callback(func():
