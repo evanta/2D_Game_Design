@@ -710,9 +710,9 @@ stream = SubResource("AudioStreamWAV_wkt8g")
 
 [node name="FinishLevel" parent="." unique_id=492503270 instance=ExtResource("8_rh0dl")]
 position = Vector2(4054, 827)
-timeMult = 3000.0
+timeMult = 3005.0
 healthMult = 100.0
-enemyMult = 700.0
+enemyMult = 705.0
 styleKillMult = 830.0
 sMinScore = 5000.0
 aMinScore = 4600.0
