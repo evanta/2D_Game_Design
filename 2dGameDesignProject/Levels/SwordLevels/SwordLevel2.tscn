@@ -1,7 +1,6 @@
 [gd_scene format=4 uid="uid://5jgr42dha4nl"]
 
 [ext_resource type="Texture2D" uid="uid://vf8nfm2nxewd" path="res://Assets/Legacy-Fantasy - High Forest 2.3/Background/Background.png" id="1_5owkm"]
-[ext_resource type="Texture2D" uid="uid://bcfkkqejw0loi" path="res://Assets/Grade Screens/GradeA.png" id="2_fosa6"]
 [ext_resource type="PackedScene" uid="uid://ka36vvotev3b" path="res://Enemies/skeleton_enemy.tscn" id="2_wx02h"]
 [ext_resource type="Texture2D" uid="uid://b2uaxiig5taa8" path="res://Assets/Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="3_mc7wk"]
 [ext_resource type="Script" uid="uid://be4nl2ofjxkub" path="res://Levels/LevelResources/catch_fall.gd" id="4_af3re"]
@@ -584,11 +583,6 @@ position = Vector2(1288, -1184)
 rotation = -3.1415925
 scale = Vector2(34.961666, 8.460439)
 texture = ExtResource("1_5owkm")
-
-[node name="GradeA" type="Sprite2D" parent="Background" unique_id=1462507591]
-position = Vector2(180, 378.00006)
-scale = Vector2(0.50103736, 0.4887446)
-texture = ExtResource("2_fosa6")
 
 [node name="ENEMIES" type="Node2D" parent="." unique_id=1888518329]
 
