@@ -704,7 +704,7 @@ stream = SubResource("AudioStreamWAV_wkt8g")
 [node name="UI" parent="." unique_id=1432553550 instance=ExtResource("7_35ifa")]
 
 [node name="LadderZone" parent="." unique_id=1767843559 instance=ExtResource("4_j8l4y")]
-position = Vector2(2240, 362)
+position = Vector2(2233, 384)
 
 [node name="FinishLevel" parent="." unique_id=492503270 instance=ExtResource("8_5cxmg")]
 position = Vector2(3836, 728)

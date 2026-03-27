@@ -10,8 +10,7 @@ extends CharacterBody2D
 @export var gravity: float = 900.0
 @export var jumpForce: float = 100.0
 
-@onready var ladder_zone: Ladder = $"../LadderZone"
-
+var onLadder: bool = false
 var lastSafePosition: Vector2 = Vector2.ZERO
 var safePositionTimer: float = 0.0
 var slotOffset = 45.0
@@ -41,8 +40,8 @@ func _physics_process(delta):
 	
 	# Gravity
 	if not is_on_floor():
-		if ladder_zone and ladder_zone.playerInLadder and Input.is_action_pressed("jump"):
-			velocity.y = -150.0  # climb speedw
+		if onLadder and Input.is_action_pressed("jump"):
+			velocity.y = -150.0
 		else:
 			velocity.y += gravity * delta
 

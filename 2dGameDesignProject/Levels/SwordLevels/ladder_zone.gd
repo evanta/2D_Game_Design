@@ -1,7 +1,7 @@
 class_name Ladder
 extends Area2D
 @export var playerInLadder : bool = false 
-@onready var label: Label = %Label
+@onready var label: Label = $Label
 
 func _ready() -> void:
 	body_entered.connect(onBodyEntered)
@@ -11,11 +11,10 @@ func _ready() -> void:
 
 func onBodyEntered(body):
 	if body.is_in_group("player"):
-		playerInLadder = true
+		body.onLadder = true
 		label.visible = true
-		print(playerInLadder)
 
 func onBodyExited(body):
 	if body.is_in_group("player"):
-		playerInLadder = false
+		body.onLadder = false
 		label.visible = false
