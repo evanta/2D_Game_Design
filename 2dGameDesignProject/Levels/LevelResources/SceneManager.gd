@@ -14,11 +14,15 @@ var levelPaths : Dictionary = {
 	],
 	"Bow": [
 		"res://Levels/BowLevels/BowLevel1.tscn",
+		"res://Levels/BowLevels/BowLevel2.tscn",
+		"res://Levels/BowLevels/BowLevel3.tscn",
+		"res://Levels/BowLevels/BowLevel4.tscn",
 	],
 	"Gauntlets": [
 		"res://Levels/GauntletsLevels/GauntletLevel1.tscn",
 		"res://Levels/GauntletsLevels/GauntletLevel2.tscn",
 		"res://Levels/GauntletsLevels/GauntletsLevel3.tscn",
+		"res://Levels/GauntletsLevels/GauntletsLevel4.tscn",
 	]
 }
 
