@@ -10,6 +10,7 @@ var levelPaths : Dictionary = {
 		"res://Levels/SwordLevels/SwordLevel1.tscn",
 		"res://Levels/SwordLevels/SwordLevel2.tscn",
 		"res://Levels/SwordLevels/SwordLevel3.tscn",
+		"res://Levels/SwordLevels/SwordLevel4.tscn",
 	],
 	"Bow": [
 		"res://Levels/BowLevels/BowLevel1.tscn",
