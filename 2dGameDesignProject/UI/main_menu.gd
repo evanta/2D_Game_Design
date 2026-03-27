@@ -7,7 +7,11 @@ extends Control
 @onready var sword_levels: VBoxContainer = $VBoxContainer/WeaponContainer/SwordLevelsContainer/SwordLevels
 @onready var show_bow_levels: Button = $VBoxContainer/WeaponContainer/BowLevelsContainer/ShowBowLevels
 @onready var bow_levels: VBoxContainer = $VBoxContainer/WeaponContainer/BowLevelsContainer/BowLevels
+@onready var quitbutton: Button = $VBoxContainer/Button
+@onready var quit_label: Label = $VBoxContainer/Button/HBoxContainer/QuitLabel
 
+var messages = ["Are you sure?", "YOUR PROGRESS WONT SAVE WE DONT SAVE TO DISC!", "Coward!", "Just play the game.", "Do you really wanna replay everything that you have done?", "Dropouttttt", "Just give up on this", "I wont let you quit", "Take no for an answer!", "Its for your own good!, I just want you to learn", "*yawn", "you could have played a whole level by now", "IT WONT WORK STOP PRESSING ME", "AHHHHHHHH"]
+var messageIndex = 0
 
 var weaponLevelContainers : Dictionary = {}
 
@@ -19,7 +23,7 @@ func _ready():
 	show_sword_levels.pressed.connect(_on_show_sword_levels_pressed)
 	show_bow_levels.pressed.connect(_on_show_bow_levels_pressed)
 	show_gauntlets_levels.pressed.connect(_on_show_gauntlets_levels_pressed)
-	
+	quitbutton.pressed.connect(onQuitPressed)
 	weaponLevelContainers = {
 		"Sword": sword_levels,
 		"Bow": bow_levels,
@@ -77,3 +81,7 @@ func _on_show_gauntlets_levels_pressed():
 	var wasOpen = gauntlets_levels.visible
 	hideAllLevels()
 	gauntlets_levels.visible = !wasOpen
+
+func onQuitPressed():
+	quit_label.text = messages[messageIndex]
+	messageIndex = (messageIndex + 1) % messages.size()
