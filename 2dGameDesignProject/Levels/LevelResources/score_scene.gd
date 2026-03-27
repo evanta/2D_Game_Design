@@ -15,7 +15,7 @@ extends CanvasLayer
 @onready var gotta_geta_b_label: Label = $Control/ButtonContainer/GottaGetaBLabel
 
 var gradeImages : Dictionary = {
-	"S": preload("res://Assets/Grade Screens/GradeA.png"),##change to S when finish
+	"S": preload("res://Assets/Grade Screens/GradeS.png"),##change to S when finish
 	"A": preload("res://Assets/Grade Screens/GradeA.png"),
 	"B": preload("res://Assets/Grade Screens/GradeB.png"),
 	"C": preload("res://Assets/Grade Screens/GradeC.png"),
