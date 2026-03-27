@@ -1,17 +1,17 @@
 [gd_scene format=4 uid="uid://fxyo0yawxspg"]
 
-[ext_resource type="Texture2D" uid="uid://vf8nfm2nxewd" path="res://Assets/Legacy-Fantasy - High Forest 2.3/Background/Background.png" id="1_sgs13"]
-[ext_resource type="PackedScene" uid="uid://ka36vvotev3b" path="res://Enemies/skeleton_enemy.tscn" id="2_d5rlt"]
-[ext_resource type="Texture2D" uid="uid://b2uaxiig5taa8" path="res://Assets/Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="3_vpxg8"]
-[ext_resource type="Script" uid="uid://be4nl2ofjxkub" path="res://Levels/LevelResources/catch_fall.gd" id="4_sq225"]
-[ext_resource type="PackedScene" uid="uid://dbq2vts66xtpi" path="res://Sprite/Character.tscn" id="5_ct3wn"]
-[ext_resource type="PackedScene" uid="uid://dwrk1nabq0y3g" path="res://Weapons/WeaponPickUp.tscn" id="6_by66l"]
-[ext_resource type="PackedScene" uid="uid://dnphqkwoyrt06" path="res://UI/UI.tscn" id="7_rba4q"]
-[ext_resource type="PackedScene" uid="uid://b8gs2ueysl86o" path="res://Levels/LevelResources/FinishLevel.tscn" id="8_hs60f"]
-[ext_resource type="PackedScene" uid="uid://bilgph55b35oa" path="res://Levels/LevelResources/ladder_zone.tscn" id="9_d5rlt"]
+[ext_resource type="Texture2D" uid="uid://vf8nfm2nxewd" path="res://Assets/Legacy-Fantasy - High Forest 2.3/Background/Background.png" id="1_d5rlt"]
+[ext_resource type="PackedScene" uid="uid://ka36vvotev3b" path="res://Enemies/skeleton_enemy.tscn" id="2_vpxg8"]
+[ext_resource type="Texture2D" uid="uid://b2uaxiig5taa8" path="res://Assets/Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="3_sq225"]
+[ext_resource type="Script" uid="uid://be4nl2ofjxkub" path="res://Levels/LevelResources/catch_fall.gd" id="4_ct3wn"]
+[ext_resource type="PackedScene" uid="uid://dbq2vts66xtpi" path="res://Sprite/Character.tscn" id="5_by66l"]
+[ext_resource type="PackedScene" uid="uid://dwrk1nabq0y3g" path="res://Weapons/WeaponPickUp.tscn" id="6_rba4q"]
+[ext_resource type="PackedScene" uid="uid://dnphqkwoyrt06" path="res://UI/UI.tscn" id="7_hs60f"]
+[ext_resource type="PackedScene" uid="uid://b8gs2ueysl86o" path="res://Levels/LevelResources/FinishLevel.tscn" id="8_kgks7"]
+[ext_resource type="PackedScene" uid="uid://bilgph55b35oa" path="res://Levels/LevelResources/ladder_zone.tscn" id="9_43t2c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dycxk"]
-texture = ExtResource("3_vpxg8")
+texture = ExtResource("3_sq225")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -524,88 +524,88 @@ stereo = true
 modulate = Color(1, 0.9607843, 0.9607843, 1)
 position = Vector2(638, 289.5)
 scale = Vector2(2.6416667, 2.5404413)
-texture = ExtResource("1_sgs13")
+texture = ExtResource("1_d5rlt")
 
 [node name="Background5" type="Sprite2D" parent="Background" unique_id=752825731]
 modulate = Color(1, 0.9607843, 0.9607843, 1)
 position = Vector2(-630, 289.50003)
 scale = Vector2(2.6416667, 2.5404413)
-texture = ExtResource("1_sgs13")
+texture = ExtResource("1_d5rlt")
 
 [node name="Background2" type="Sprite2D" parent="Background" unique_id=322050883]
 modulate = Color(1, 0.9607843, 0.9607843, 1)
 position = Vector2(1906, 289.50003)
 scale = Vector2(2.6416667, 2.5404413)
-texture = ExtResource("1_sgs13")
+texture = ExtResource("1_d5rlt")
 
 [node name="Background3" type="Sprite2D" parent="Background" unique_id=1629463575]
 modulate = Color(1, 0.9607843, 0.9607843, 1)
 position = Vector2(3170, 289.50003)
 scale = Vector2(2.6416667, 2.5404413)
-texture = ExtResource("1_sgs13")
+texture = ExtResource("1_d5rlt")
 
 [node name="Background4" type="Sprite2D" parent="Background" unique_id=758630057]
 modulate = Color(1, 0.9607843, 0.9607843, 1)
 position = Vector2(4432, 288)
 scale = Vector2(2.6416667, 2.5404413)
-texture = ExtResource("1_sgs13")
+texture = ExtResource("1_d5rlt")
 
 [node name="Background8" type="Sprite2D" parent="Background" unique_id=603211415]
 modulate = Color(1, 0.9607843, 0.9607843, 1)
 position = Vector2(5704, 288)
 scale = Vector2(2.8888996, 2.5404413)
-texture = ExtResource("1_sgs13")
+texture = ExtResource("1_d5rlt")
 
 [node name="Background9" type="Sprite2D" parent="Background" unique_id=1442211910]
 modulate = Color(1, 0.9607843, 0.9607843, 1)
 position = Vector2(6904, 288.00003)
 scale = Vector2(2.6416667, 2.5404413)
-texture = ExtResource("1_sgs13")
+texture = ExtResource("1_d5rlt")
 
 [node name="Background10" type="Sprite2D" parent="Background" unique_id=1776944474]
 modulate = Color(1, 0.9607843, 0.9607843, 1)
 position = Vector2(7783.9995, 288)
 scale = Vector2(2.6416667, 2.5404413)
-texture = ExtResource("1_sgs13")
+texture = ExtResource("1_d5rlt")
 
 [node name="Background11" type="Sprite2D" parent="Background" unique_id=941740964]
 modulate = Color(1, 0.9607843, 0.9607843, 1)
 position = Vector2(8848, 288)
 scale = Vector2(2.6416667, 2.5404413)
-texture = ExtResource("1_sgs13")
+texture = ExtResource("1_d5rlt")
 
 [node name="Background6" type="Sprite2D" parent="Background" unique_id=126676321]
 modulate = Color(1, 0.9607843, 0.9607843, 1)
 position = Vector2(1198.7998, 1649.5)
 rotation = -3.1415925
 scale = Vector2(34.961666, 8.460439)
-texture = ExtResource("1_sgs13")
+texture = ExtResource("1_d5rlt")
 
 [node name="Background7" type="Sprite2D" parent="Background" unique_id=394831360]
 modulate = Color(1, 0.9607843, 0.9607843, 1)
 position = Vector2(1288, -1184)
 rotation = -3.1415925
 scale = Vector2(34.961666, 8.460439)
-texture = ExtResource("1_sgs13")
+texture = ExtResource("1_d5rlt")
 
 [node name="ENEMIES" type="Node2D" parent="." unique_id=1888518329]
 
-[node name="Skeleton" parent="ENEMIES" unique_id=1046337729 instance=ExtResource("2_d5rlt")]
+[node name="Skeleton" parent="ENEMIES" unique_id=1046337729 instance=ExtResource("2_vpxg8")]
 position = Vector2(822, 337)
 scale = Vector2(0.815, 0.697)
 max_walk_distance = 10.0
 
-[node name="Skeleton4" parent="ENEMIES" unique_id=1256971540 instance=ExtResource("2_d5rlt")]
+[node name="Skeleton4" parent="ENEMIES" unique_id=1256971540 instance=ExtResource("2_vpxg8")]
 position = Vector2(488.0001, 397)
 scale = Vector2(0.815, 0.697)
 max_walk_distance = 30.0
 
-[node name="Skeleton2" parent="ENEMIES" unique_id=70072028 instance=ExtResource("2_d5rlt")]
+[node name="Skeleton2" parent="ENEMIES" unique_id=70072028 instance=ExtResource("2_vpxg8")]
 position = Vector2(909.00006, 209)
 scale = Vector2(0.815, 0.697)
 max_walk_distance = 10.0
 
-[node name="Skeleton3" parent="ENEMIES" unique_id=769207340 instance=ExtResource("2_d5rlt")]
+[node name="Skeleton3" parent="ENEMIES" unique_id=769207340 instance=ExtResource("2_vpxg8")]
 position = Vector2(909.00006, 66)
 scale = Vector2(0.815, 0.697)
 max_walk_distance = 10.0
@@ -625,17 +625,17 @@ shape = SubResource("RectangleShape2D_wkt8g")
 
 [node name="CatchFall" type="Area2D" parent="." unique_id=1055501774]
 position = Vector2(0, 792)
-script = ExtResource("4_sq225")
+script = ExtResource("4_ct3wn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CatchFall" unique_id=1313615956]
 position = Vector2(3136, 521.5)
 shape = SubResource("RectangleShape2D_dycxk")
 
-[node name="CharacterBody2D" parent="." unique_id=2039678697 instance=ExtResource("5_ct3wn")]
+[node name="CharacterBody2D" parent="." unique_id=2039678697 instance=ExtResource("5_by66l")]
 position = Vector2(128, 488)
 jumpForce = 460.0
 
-[node name="WeaponPickUp" parent="." unique_id=1707225356 instance=ExtResource("6_by66l")]
+[node name="WeaponPickUp" parent="." unique_id=1707225356 instance=ExtResource("6_rba4q")]
 position = Vector2(216, 494)
 scale = Vector2(0.7, 0.7)
 weaponType = 1
@@ -645,15 +645,15 @@ position = Vector2(216, 494)
 scale = Vector2(0.69999987, 0.69999987)
 stream = SubResource("AudioStreamWAV_wkt8g")
 
-[node name="UI" parent="." unique_id=1432553550 instance=ExtResource("7_rba4q")]
+[node name="UI" parent="." unique_id=1432553550 instance=ExtResource("7_hs60f")]
 
-[node name="FinishLevel" parent="." unique_id=492503270 instance=ExtResource("8_hs60f")]
+[node name="FinishLevel" parent="." unique_id=492503270 instance=ExtResource("8_kgks7")]
 position = Vector2(1408, 384)
 
-[node name="LadderZone" parent="." unique_id=1767843559 instance=ExtResource("9_d5rlt")]
+[node name="LadderZone" parent="." unique_id=1767843559 instance=ExtResource("9_43t2c")]
 position = Vector2(308, 257)
 scale = Vector2(0.078, 0.52)
 
-[node name="LadderZone2" parent="." unique_id=2128708262 instance=ExtResource("9_d5rlt")]
+[node name="LadderZone2" parent="." unique_id=2128708262 instance=ExtResource("9_43t2c")]
 position = Vector2(827, -48)
 scale = Vector2(0.108, 1.12)
