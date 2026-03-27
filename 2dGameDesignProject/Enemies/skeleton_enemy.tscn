@@ -277,7 +277,8 @@ shape = SubResource("RectangleShape2D_fcdv1")
 [node name="Headshot" type="Area2D" parent="." unique_id=128045750]
 
 [node name="HeadshotShape" type="CollisionShape2D" parent="Headshot" unique_id=1411102221]
-position = Vector2(-4.333703, -15.192629)
+position = Vector2(-1.8573014, -15.916087)
+scale = Vector2(1.4801545, 1.288906)
 shape = SubResource("CircleShape2D_fcdv1")
 
 [node name="HeadshotLabel" type="RichTextLabel" parent="." unique_id=1776219559]
