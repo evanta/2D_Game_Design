@@ -10,7 +10,7 @@ extends Control
 @onready var quitbutton: Button = $VBoxContainer/Button
 @onready var quit_label: Label = $VBoxContainer/Button/HBoxContainer/QuitLabel
 
-var messages = ["Are you sure?", "YOUR PROGRESS WONT SAVE WE DONT SAVE TO DISC!", "Coward!", "Just play the game.", "Do you really wanna replay everything that you have done?", "Dropouttttt", "Just give up on this", "I wont let you quit", "Take no for an answer!", "Its for your own good!, I just want you to learn", "*yawn", "you could have played a whole level by now", "IT WONT WORK STOP PRESSING ME", "AHHHHHHHH"]
+var messages = ["Are you sure?", "YOUR PROGRESS WONT SAVE WE DONT SAVE TO DISC!", "Coward!", "you will never be knight at this rate!", "Just play the game.", "Do you really wanna replay everything that you have done?", "Dropouttttt", "Just give up on this", "I wont let you quit", "Take no for an answer!", "Its for your own good!, I just want you to learn", "*yawn", "you could have played a whole level by now", "IT WONT WORK STOP PRESSING ME", "AHHHHHHHH"]
 var messageIndex = 0
 
 var weaponLevelContainers : Dictionary = {}
